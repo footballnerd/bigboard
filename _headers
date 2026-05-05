@@ -5,3 +5,7 @@
 /sitemap-test.xml
   Content-Type: application/xml
   Cache-Control: no-store, no-cache, must-revalidate
+
+/sitemap-mini.xml
+  Content-Type: application/xml
+  Cache-Control: no-store, no-cache, must-revalidate
