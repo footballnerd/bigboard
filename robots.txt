@@ -3,4 +3,6 @@ Allow: /
 
 Disallow: /*.json$
 
-Sitemap: https://bigboard.cc/sitemap.xmld
+Sitemap: https://bigboard.cc/sitemap.xml
+Sitemap: https://bigboard.cc/sitemap-test.xml
+Sitemap: https://bigboard.cc/sitemap-mini.xml
