@@ -161,7 +161,7 @@ function initialize() {
 
     document.getElementById("statPlayers").textContent = prospects.length;
     document.getElementById("statSources").textContent = metadata.sourceCount;
-    document.getElementById("statUpdated").textContent = metadata.lastUpdated;
+    document.getElementById("statUpdated").textContent = formatDate(metadata.lastUpdated);
     document.getElementById("year").textContent = new Date().getFullYear();
 
     searchInput.addEventListener("input", filterRows);
@@ -180,6 +180,16 @@ function initialize() {
     });
 
     filterRows();
+}
+
+function formatDate(dateString) {
+    const [year, month, day] = dateString.split("-");
+
+    return new Date(year, month - 1, day).toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric"
+    });
 }
 
 async function openPlayerPage(slug) {
