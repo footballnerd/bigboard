@@ -1,3 +1,20 @@
+// Player links
+async function playerLinks(){
+    document.addEventListener('click', async(e) => {
+        const row = e.target.closest('.player-row');
+        if (!row) return;
+        e.preventDefault();
+        const player = row.dataset.player;
+        const url = `/players/${player.replace(/ /g,'-')}.html`;
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
+        const html = await response.text();
+        console.log(html);
+    });
+};
+
 // Player search box
 async function searchBox(){
     const input = document.querySelector("#searchInput");
@@ -53,3 +70,4 @@ async function filterSchool(){
 searchBox();
 filterPostion();
 filterSchool();
+playerLinks();
