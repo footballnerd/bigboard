@@ -19,9 +19,9 @@ async function playerLinks(){
 async function searchBox(){
     const input = document.querySelector("#searchInput");
     input.addEventListener('input', async() => {
-        const rows = Array.from(document.querySelectorAll('tr.player-row'));
+        const rows = Array.from(document.querySelectorAll('.player-row'));
         for (const row of rows){
-            const text = row.querySelector('td.player').textContent;
+            const text = row.dataset.player;
             const isMatch = text.toLowerCase().includes(input.value.toLowerCase());
             if (isMatch){
                 row.style.display = "revert";
@@ -36,9 +36,9 @@ async function searchBox(){
 async function filterPostion(){
     const select = document.querySelector("#positionFilter");
     select.addEventListener('change', async() => {
-        const rows = Array.from(document.querySelectorAll('tr.player-row'));
+        const rows = Array.from(document.querySelectorAll('.player-row'));
         for (const row of rows){
-            const text = row.querySelector('td.position').textContent;
+            const text = row.dataset.position;
             const isMatch = text.toLowerCase() == select.value.toLowerCase();
             if (isMatch || select.selectedIndex === 0){
                 row.style.display = "revert";
@@ -53,9 +53,9 @@ async function filterPostion(){
 async function filterSchool(){
     const select = document.querySelector("#schoolFilter");
     select.addEventListener('change', async() => {
-        const rows = Array.from(document.querySelectorAll('tr.player-row'));
+        const rows = Array.from(document.querySelectorAll('.player-row'));
         for (const row of rows){
-            const text = row.querySelector('td.school').textContent;
+            const text = row.dataset.school;
             const isMatch = text.toLowerCase() == select.value.toLowerCase();
             if (isMatch || select.selectedIndex === 0){
                 row.style.display = "revert";
