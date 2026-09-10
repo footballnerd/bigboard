@@ -1,4 +1,6 @@
+// ===================================
 // Player links
+// ===================================
 async function playerLinks(){
     document.addEventListener('click', async(e) => {
         const row = e.target.closest('.player-row');
@@ -32,7 +34,9 @@ async function playerLinks(){
     });
 };
 
+// ===================================
 // Player search box
+// ===================================
 async function searchBox(){
     const input = document.querySelector("#searchInput");
     input.addEventListener('input', async() => {
@@ -49,10 +53,25 @@ async function searchBox(){
     });
 };
 
+// ===================================
 // Position filter
+// ===================================
 async function filterPostion(){
+    // Add the event listener to the dropdown menu
     const select = document.querySelector("#positionFilter");
     select.addEventListener('change', async() => {
+        await filter(); // Call the helper
+    });
+    // Parse URL for position indicator (?position=X)
+    const params = new URLSearchParams(window.location.search);
+    const position = params.get("position");
+    if (position){
+        document.querySelector("#positionFilter").value = position;
+        document.title = `${position.toUpperCase()} Rankings | BigBoard.cc`;
+        await filter(); // Call the helper
+    };
+    // Filter helper
+    async function filter(){
         const rows = Array.from(document.querySelectorAll('.player-row'));
         for (const row of rows){
             const text = row.dataset.position;
@@ -63,10 +82,12 @@ async function filterPostion(){
                 row.style.display = "none";
             };
         };
-    });
+    };
 };
 
+// ===================================
 // School filter
+// ===================================
 async function filterSchool(){
     const select = document.querySelector("#schoolFilter");
     select.addEventListener('change', async() => {
@@ -83,7 +104,9 @@ async function filterSchool(){
     });
 };
 
+// ===================================
 // Initialize
+// ===================================
 searchBox();
 filterPostion();
 filterSchool();

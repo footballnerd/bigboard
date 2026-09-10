@@ -503,24 +503,10 @@ tbody tr:hover {
 }
 
 /* OT — Orange */
-.pos-ot{
+.pos-ol{
 	background: rgba(255, 149, 0, 0.12);
 	color: #ffc46b;
 	border: 1px solid rgba(255, 149, 0, 0.28);
-}
-
-/* OG — Gold */
-.pos-iol{
-	background: rgba(255, 204, 0, 0.12);
-	color: #ffe37a;
-	border: 1px solid rgba(255, 204, 0, 0.28);
-}
-
-/* C — Yellow */
-.pos-c{
-	background: rgba(255, 214, 10, 0.12);
-	color: #fff199;
-	border: 1px solid rgba(255, 214, 10, 0.28);
 }
 
 /* EDGE — Crimson */
