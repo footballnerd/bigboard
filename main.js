@@ -24,7 +24,11 @@ async function playerLinks(){
         const response = await fetch(url);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const html = await response.text();
-        document.querySelector('#widgetContent').innerHTML = html;
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const card = doc.querySelector('.hero-card');
+        console.log(card);
+
+        document.querySelector('#widgetContent').innerHTML = card.outerHTML;
         // Close widget
         document.querySelector('.player-widget-container').addEventListener('click', async(e) =>{
             const target = e.target;

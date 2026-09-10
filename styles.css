@@ -274,12 +274,20 @@ width: min(300px, 78%);
 filter: drop-shadow(0 30px 50px rgba(0,0,0,.65));
 }
 
-.quick-stats {
-margin-top: 16px;
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 10px;
-position: relative;
+.quick-stats-3 {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    position: relative;
+}
+
+.quick-stats-4 {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    position: relative;
 }
 
 .stat {
@@ -807,21 +815,6 @@ display: block;
 .player-widget-box {
     position: relative;
     z-index: 1001;
-    min-width: 240px;
-    max-width: min(340px, calc(100vw - 32px));
-    padding: 26px;
-    color: #f7f8fa;
-    background:
-		radial-gradient(circle at top right,rgba(220, 20, 35, 0.08),transparent 38%),
-        linear-gradient(145deg,#15171d 0%,#101217 55%,#0d0f13 100%);
-    border: 1px solid rgba(255, 255, 255, 0.11);
-    border-radius: 18px;
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.4),
-        0 16px 40px rgba(0, 0, 0, 0.55),
-        0 35px 90px rgba(0, 0, 0, 0.45),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    overflow: hidden;
     animation: widget-box-in 0.22s cubic-bezier(.2, .8, .2, 1);
 }
 
