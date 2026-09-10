@@ -772,6 +772,19 @@ display: block;
 }
 
 /* ==================================================
+   LOADING SPINNER
+   ================================================== */
+
+.loading-small img{
+    height:50px;
+    width:50px;
+}
+
+.loading-small {
+    text-align:center;
+}
+
+/* ==================================================
    PLAYER WIDGET OVERLAY
    ================================================== */
 
@@ -796,7 +809,7 @@ display: block;
     z-index: 1001;
     min-width: 240px;
     max-width: min(340px, calc(100vw - 32px));
-    padding: 26px 26px 24px;
+    padding: 26px;
     color: #f7f8fa;
     background:
 		radial-gradient(circle at top right,rgba(220, 20, 35, 0.08),transparent 38%),
