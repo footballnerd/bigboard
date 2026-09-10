@@ -5,7 +5,7 @@ async function playerLinks(){
         if (!row) return;
         e.preventDefault();
         const player = row.dataset.player;
-        const url = `/players/${player.replace(/ /g,'-')}.html`;
+        const url = `/players/${player.replace(/ /g,'-').toLowerCase()}`;
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}`);
