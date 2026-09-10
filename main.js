@@ -11,7 +11,24 @@ async function playerLinks(){
             throw new Error(`HTTP ${response.status}`);
         }
         const html = await response.text();
-        console.log(html);
+        // Create widget
+        const widget = document.createElement('div');
+        widget.classList.add('player-widget-container');
+        widget.innerHTML = `
+            <div class="player-widget-box">
+                <div class="player-widget-close">X</div>
+                <div class="player-widget-content">${html}</div>
+            </div>
+            `;
+        document.body.appendChild(widget);
+        // Close widget
+        document.querySelector('.player-widget-container').addEventListener('click', async(e) =>{
+            const target = e.target;
+            const isContainer = target.classList.contains('player-widget-container');
+            const isX = target.classList.contains('player-widget-close');
+            const closeClick = (isContainer || isX);
+            if (closeClick) document.querySelector('.player-widget-container').remove();
+        });
     });
 };
 
