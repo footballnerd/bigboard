@@ -11,7 +11,7 @@ async function playerLinks(){
         widget.classList.add('player-widget-container');
         widget.innerHTML = `
             <div class="player-widget-box">
-                <div class="player-widget-close">X</div>
+                <div class="player-widget-close"></div>
                 <div class="player-widget-content" id="widgetContent">
                     <div class="loading-small"><img src="img/loading.gif"></div>
                 </div>
@@ -33,6 +33,7 @@ async function playerLinks(){
                 ${card.outerHTML}
             </div>`;
         // Close widget
+        document.querySelector('.player-widget-close').innerHTML = "X";
         document.querySelector('.player-widget-container').addEventListener('click', async(e) =>{
             const target = e.target;
             const isContainer = target.classList.contains('player-widget-container');
