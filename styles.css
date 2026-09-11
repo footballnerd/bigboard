@@ -145,7 +145,7 @@ white-space: nowrap;
 }
 
 .hero {
-padding: 34px 0 34px;
+padding: 10px 0 10px;
 }
 
 .hero-grid {
@@ -184,6 +184,10 @@ font-size: clamp(2.25rem, 6vw, 4.6rem);
 line-height: .94;
 letter-spacing: -.06em;
 max-width: 820px;
+}
+
+h1.widget-header {
+    font-size: 2.25rem;
 }
 
 .gradient-text {
@@ -718,7 +722,7 @@ font-size: .94rem;
 }
 
 .footer {
-padding: 40px 0 56px;
+padding: 10px 0 10px;
 color: var(--muted);
 }
 
@@ -935,7 +939,6 @@ display: block;
     .player-widget-content {
         font-size: 14px;
     }
-	.hero { padding-top: 46px; }
 	.hero-grid { grid-template-columns: 1fr; }
 	.hero-card { order: -1; }
 	.logo-stage { min-height: 280px; }
@@ -945,7 +948,7 @@ display: block;
 	.site-shell { width: min(100% - 22px, var(--max)); }
 	.topbar-inner { height: 66px; }
 	.brand-title span { display: none; }
-	.hero { padding: 34px 0 14px; }
+	.hero { padding: 10px 0 10px; }
 	.hero-actions .button { width: 100%; }
 	.quick-stats { grid-template-columns: 1fr; }
 	.controls { grid-template-columns: 1fr; }
