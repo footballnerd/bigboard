@@ -174,7 +174,7 @@ img {
 
 .topbar-inner {
 
-  min-height: 68px;
+  min-height: 62px;
 
   display: flex;
 
@@ -304,13 +304,15 @@ img {
 
 .socials img {
 
-  width: 27px;
+  width: 38px;
 
-  height: 27px;
+  height: 38px;
 
   padding: 5px;
 
   opacity: .55;
+
+  vertical-align: middle;
 
   border: 1px solid var(--border);
 
