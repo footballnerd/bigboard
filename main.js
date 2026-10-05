@@ -34,6 +34,8 @@ async function playerLinks(){
             </div>`;
         // Close widget
         document.querySelector('.player-widget-close').innerHTML = "X";
+        document.querySelector('.player-widget-close').style.border = "3px solid #DC262D";
+        document.querySelector('.player-widget-close').style.background = "#171719";
         document.querySelector('.player-widget-container').addEventListener('click', async(e) =>{
             const target = e.target;
             const isContainer = target.classList.contains('player-widget-container');
