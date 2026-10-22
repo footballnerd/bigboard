@@ -382,7 +382,7 @@ h1 {
   max-width: 850px;
   margin: 0 0 12px;
   font-family: var(--serif);
-  font-size: 3.25rem;
+  font-size: 3rem;
   font-weight: 700;
   line-height: .96;
 }
@@ -525,7 +525,6 @@ h1.widget-header {
 }
 
 .logo-stage {
-  min-height: 245px;
   padding: 1rem;
   position: relative;
 
@@ -566,7 +565,7 @@ h1.widget-header {
 }
 
 .bigboard-logo {
-  width: min(235px, 70%);
+  width: min(160px, 70%);
 
   filter: drop-shadow(0 16px 28px rgba(0,0,0,.45));
 
