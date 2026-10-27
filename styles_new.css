@@ -1538,7 +1538,7 @@ tbody tr:hover td:first-child {
 
 @media (prefers-reduced-motion: reduce) {
 
-  \*,
+  *,
 
   *::before,
 
@@ -1772,4 +1772,239 @@ tbody tr:hover td:first-child {
     letter-spacing: .08em;
     text-transform: uppercase;
   }
+}
+
+/* ---------- 19. PLAYER PROFILE PAGE ---------- */
+
+.player-profile .hero:first-child {
+  padding-bottom: 0;
+}
+
+.player-profile .hero + .hero {
+  padding-top: 12px;
+}
+
+.player-profile .hero-card {
+  transform: none;
+}
+
+.player-profile .widget-header {
+  font-size: clamp(1.65rem, 5vw, 2.2rem);
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+
+.player-sub {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.45;
+}
+
+.trend-chart {
+  min-width: 0;
+  margin: 16px 0 14px;
+}
+
+/* Keep two-column profile stats even on narrow screens. */
+.player-profile .quick-stats-2,
+.player-widget-content .quick-stats-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* ---------- 20. WEEKLY RANKING CHART ---------- */
+
+.bbh {
+  width: 100%;
+  margin: 0;
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+.bbh, .bbh * { box-sizing: border-box; }
+
+.bbh-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-bottom: 9px;
+}
+
+.bbh-heading {
+  color: #f2f0ec;
+  font-size: .86rem;
+  font-weight: 750;
+  letter-spacing: .008em;
+}
+
+.bbh-current {
+  flex: 0 0 auto;
+  color: #ff5267;
+  font-size: .77rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.bbh-canvas {
+  max-width: 100%;
+  border: 1px solid #303038;
+  border-radius: 9px;
+  background: #101114;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.bbh-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.bbh-grid {
+  stroke: #31333a;
+  stroke-width: 1;
+  stroke-dasharray: 3 5;
+}
+
+.bbh-axis,
+.bbh-axis-label {
+  fill: #a2a5af;
+  font-family: var(--sans);
+  font-size: 11px;
+}
+
+.bbh-axis-label {
+  font-weight: 650;
+  letter-spacing: .03em;
+}
+
+.bbh-path {
+  fill: none;
+  stroke: #ff344f;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bbh-area { opacity: .58; }
+
+.bbh-point {
+  outline: none;
+  cursor: crosshair;
+}
+
+.bbh-hit {
+  fill: transparent;
+  pointer-events: all;
+}
+
+.bbh-dot {
+  fill: #ff344f;
+  stroke: #101114;
+  stroke-width: 2;
+  transition: fill .13s ease, stroke .13s ease;
+}
+
+.bbh-point:hover .bbh-dot,
+.bbh-point:focus .bbh-dot {
+  r: 6;
+  fill: #ff7485;
+  stroke: #f5f3f0;
+  stroke-width: 2.2;
+}
+
+/* The tooltip is in its own topmost SVG layer. Individual visibility rules
+   are generated and scoped by trendChart.js, with no runtime JS required. */
+.bbh-tooltip {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 14px rgba(0,0,0,.75));
+  transition: opacity .12s ease;
+}
+
+.bbh-tooltip-bg {
+  fill: #191b22;
+  fill-opacity: 1;
+  stroke: #535762;
+  stroke-width: 1;
+}
+
+.bbh-tooltip-accent { fill: #ff465e; }
+
+.bbh-tooltip-date,
+.bbh-tooltip-rank,
+.bbh-tooltip-detail,
+.bbh-tooltip-average {
+  font-family: var(--sans);
+  stroke: none;
+}
+
+.bbh-tooltip-date {
+  fill: #b4bdce;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .025em;
+}
+
+.bbh-tooltip-rank {
+  fill: #fff;
+  font-size: 22px;
+  font-weight: 780;
+  letter-spacing: -.025em;
+}
+
+.bbh-tooltip-divider {
+  stroke: #383c46;
+  stroke-width: 1;
+}
+
+.bbh-tooltip-detail {
+  fill: #e7e9ee;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bbh-tooltip-average {
+  fill: #aeb5c2;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.bbh-foot {
+  margin: 9px 0 0;
+  color: #989aa3;
+  font-size: .72rem;
+  line-height: 1.5;
+}
+
+.bbh-empty {
+  margin-top: 9px;
+  padding: 25px 12px;
+  border: 1px solid #303038;
+  border-radius: 9px;
+  background: #101114;
+  color: #a6a9b3;
+  font-size: .82rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .player-profile .widget-card { padding: 12px; }
+  .bbh-canvas {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* Preserve readable axes/tooltips instead of shrinking them to 6px. */
+  .bbh-svg { min-width: 540px; }
+  .bbh-foot { font-size: .68rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bbh-dot, .bbh-tooltip { transition: none; }
 }

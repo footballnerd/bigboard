@@ -8,6 +8,2019 @@
             <meta name="theme-color" content="#08090c">
             <link rel="canonical" href="https://bigboard.cc/players/carter-smith.html">
             <link rel="stylesheet" href="../styles.css">
+            <!-- Built-in CSS fallback: these pages display correctly even if
+                 ../styles.css is missing from the deployed website. -->
+            <style id="bigboard-player-styles">/* ==========================================================================
+
+   BIGBOARD.CC — ORGANIC / EDITORIAL REDESIGN
+
+   Rebuilt from scratch while preserving the site's existing class names.
+
+   Goal: less "AI SaaS template", more independent sports-data publication.
+
+   ========================================================================== */
+
+/* ---------- 1. DESIGN TOKENS ---------- */
+
+:root {
+
+  --bg: #0b0b0c;
+
+  --bg-soft: #111113;
+
+  --panel: #151517;
+
+  --panel-2: #1b1b1e;
+
+  --border: #29292d;
+
+  --border-strong: #3a3a40;
+
+  --text: #f2f0ec;
+
+  --muted: #aaa7a1;
+
+  --muted-2: #77746f;
+
+  --red: #e3262e;
+
+  --red-dark: #a7131a;
+
+  --white: #ffffff;
+
+  --green: #45b97c;
+
+  --yellow: #d6a33f;
+
+  --shadow: 0 16px 42px rgba(0, 0, 0, .28);
+
+  --radius: 8px;
+
+  --radius-sm: 5px;
+
+  --max: 1180px;
+
+  --serif: Georgia, "Times New Roman", serif;
+
+  --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+
+}
+
+/* ---------- 2. RESET / BASE ---------- */
+
+* {
+
+  box-sizing: border-box;
+
+}
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+body {
+
+  margin: 0;
+
+  min-height: 100vh;
+
+  color: var(--text);
+
+  font-family: var(--sans);
+
+  background:
+
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+
+    linear-gradient(90deg, rgba(255,255,255,.014) 1px, transparent 1px),
+
+    var(--bg);
+
+  background-size: 100% 48px, 48px 100%, auto;
+
+}
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0 0 auto 0;
+
+  height: 3px;
+
+  background: var(--red);
+
+  z-index: 100;
+
+  pointer-events: none;
+
+}
+
+::selection {
+
+  background: rgba(227, 38, 46, .35);
+
+  color: #fff;
+
+}
+
+a {
+
+  color: inherit;
+
+  text-decoration: none;
+
+}
+
+a:hover {
+
+  color: #fff;
+
+}
+
+img {
+
+  max-width: 100%;
+
+}
+
+/* ---------- 3. PAGE SHELL ---------- */
+
+.site-shell {
+
+  width: min(var(--max), calc(100% - 40px));
+
+  margin: 0 auto;
+
+}
+
+.player-shell {
+
+  width: min(650px, calc(100% - 32px));
+
+  margin: 0 auto;
+
+}
+
+/* ---------- 4. HEADER ---------- */
+
+.topbar {
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 20;
+
+  background: rgba(11, 11, 12, .94);
+
+  border-bottom: 1px solid var(--border);
+
+}
+
+.topbar-inner {
+
+  min-height: 62px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 18px;
+
+}
+
+.bottombar {
+
+  position: sticky;
+
+  bottom: 0;
+
+  z-index: 20;
+
+  background: rgba(11, 11, 12, .96);
+
+  border-top: 1px solid var(--border);
+
+}
+
+.brand {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  min-width: 0;
+
+}
+
+.brand-mark {
+
+  width: 38px;
+
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  flex: 0 0 auto;
+
+  background: #050506;
+
+  border: 1px solid #4c1619;
+
+  border-radius: 4px;
+
+}
+
+.brand-mark svg {
+
+  width: 25px;
+
+  height: 25px;
+
+}
+
+.brand-mark img {
+
+  width: 20px;
+
+  height: auto;
+
+  display: block;
+
+}
+
+.brand-title {
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  line-height: 1.05;
+
+}
+
+.brand-title strong {
+
+  font-family: var(--serif);
+
+  font-size: 1.04rem;
+
+  font-weight: 700;
+
+  letter-spacing: .01em;
+
+  white-space: nowrap;
+
+}
+
+.brand-title span {
+
+  margin-top: 5px;
+
+  color: var(--muted);
+
+  font-size: .72rem;
+
+  letter-spacing: .03em;
+
+  white-space: nowrap;
+
+}
+
+.socials {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--muted);
+
+}
+
+.socials img {
+
+  width: 38px;
+
+  height: 38px;
+
+  padding: 5px;
+
+  opacity: .55;
+
+  vertical-align: middle;
+
+  border: 1px solid var(--border);
+
+  border-radius: 4px;
+
+  background: transparent;
+
+  transition: opacity .14s ease, border-color .14s ease;
+
+}
+
+.socials img:hover {
+
+  opacity: .92;
+
+  border-color: var(--border-strong);
+
+}
+
+/* ---------- 5. HERO ---------- */
+
+.hero {
+  padding: 24px 0 18px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.12fr .88fr;
+  gap: clamp(22px, 4vw, 46px);
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #d8d2cb;
+
+  font-family: var(--mono);
+
+  font-size: .75rem;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: .11em;
+
+}
+
+.eyebrow-dot {
+
+  width: 6px;
+
+  height: 6px;
+
+  background: var(--red);
+
+  border-radius: 1px;
+
+}
+
+h1 {
+  max-width: 850px;
+  margin: 0 0 12px;
+  font-family: var(--serif);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: .96;
+}
+
+h1.widget-header {
+
+  margin: 0;
+
+  font-size: 2.2rem;
+
+}
+
+.gradient-text {
+
+  color: #f4f0e9;
+
+  background: none;
+
+  -webkit-text-fill-color: initial;
+
+}
+
+.hero-copy {
+  max-width: 690px;
+  margin: 0 0 18px;
+  color: #b8b4ad;
+  font-size: clamp(.95rem, 1.4vw, 1.05rem);
+  line-height: 1.55;
+}
+
+.hero-actions {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 10px;
+
+}
+
+.button {
+
+  min-height: 42px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 0 15px;
+
+  border: 1px solid var(--border-strong);
+
+  border-radius: 4px;
+
+  background: #161618;
+
+  color: #f6f4ef;
+
+  font: 700 .83rem/1 var(--sans);
+
+  letter-spacing: .015em;
+
+  cursor: pointer;
+
+  transition: background .14s ease, border-color .14s ease;
+
+}
+
+.button:hover {
+
+  background: #1d1d20;
+
+  border-color: #515158;
+
+}
+
+.button-primary {
+
+  border-color: var(--red);
+
+  background: var(--red);
+
+  color: #fff;
+
+}
+
+.button-primary:hover {
+
+  background: #f02b34;
+
+  border-color: #f02b34;
+
+}
+
+.button-secondary {
+
+  background: transparent;
+
+}
+
+/* ---------- 6. HERO / WIDGET CARDS ---------- */
+
+.hero-card,
+.widget-card {
+  position: relative;
+  overflow: hidden;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #101012;
+  box-shadow: var(--shadow);
+}
+
+.hero-card {
+
+  transform: rotate(.25deg);
+
+}
+
+.hero-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0 auto 0 0;
+
+  width: 3px;
+
+  background: var(--red);
+
+  pointer-events: none;
+
+}
+
+.logo-stage {
+  padding: 1rem;
+  position: relative;
+
+  display: grid;
+
+  place-items: center;
+
+  overflow: hidden;
+
+  border: 1px solid #232326;
+
+  border-radius: 4px;
+
+  background:
+
+    linear-gradient(135deg, transparent 0 49.5%, rgba(255,255,255,.025) 49.5% 50.5%, transparent 50.5%),
+
+    #09090a;
+
+}
+
+.logo-stage::after {
+
+  content: "CONSENSUS • 2027";
+
+  position: absolute;
+
+  right: 10px;
+
+  bottom: 9px;
+
+  color: #5e5d5a;
+
+  font: 600 .62rem/1 var(--mono);
+
+  letter-spacing: .12em;
+
+}
+
+.bigboard-logo {
+  width: min(160px, 70%);
+
+  filter: drop-shadow(0 16px 28px rgba(0,0,0,.45));
+
+}
+
+.quick-stats-3,
+.quick-stats-2 {
+  position: relative;
+  display: grid;
+  gap: 1px;
+  margin-top: 8px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+
+  border-radius: 4px;
+
+  background: var(--border);
+
+}
+
+.quick-stats-3 {
+
+  grid-template-columns: repeat(3, 1fr);
+
+}
+
+.quick-stats-2 {
+
+  grid-template-columns: repeat(2, 1fr);
+
+}
+
+.stat {
+  min-width: 0;
+  padding: 10px 12px;
+
+  border: 0;
+
+  border-radius: 0;
+
+  background: #101012;
+
+}
+
+.stat strong {
+
+  display: block;
+
+  font-family: var(--mono);
+
+  font-size: 1.13rem;
+
+  font-weight: 700;
+
+  letter-spacing: -.04em;
+
+}
+
+.stat span {
+
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--muted-2);
+
+  font-size: .67rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: .09em;
+
+}
+
+/* ---------- 7. SECTIONS ---------- */
+
+.section {
+
+  padding: 26px 0;
+
+}
+
+.section + .section {
+
+  border-top: 1px solid #1a1a1d;
+
+}
+
+.section-head {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: end;
+
+  gap: 24px;
+
+  margin-bottom: 16px;
+
+}
+
+.section-head h2 {
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+
+  line-height: 1;
+
+  letter-spacing: -.025em;
+
+}
+
+.section-head p {
+
+  max-width: 680px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  line-height: 1.55;
+
+}
+
+.updated-pill {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0;
+
+  color: var(--muted);
+
+  background: transparent;
+
+  border: 0;
+
+  border-radius: 0;
+
+  font-family: var(--mono);
+
+  font-size: .72rem;
+
+  white-space: nowrap;
+
+}
+
+/* ---------- 8. BOARD ---------- */
+
+.board-panel {
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius);
+
+  background: #0f0f11;
+
+  box-shadow: 0 12px 32px rgba(0,0,0,.22);
+
+}
+
+.controls {
+
+  display: grid;
+
+  grid-template-columns: 1.4fr repeat(2, minmax(140px, .45fr));
+
+  gap: 10px;
+
+  padding: 12px;
+
+  border-bottom: 1px solid var(--border);
+
+  background: #131315;
+
+}
+
+.field {
+
+  position: relative;
+
+}
+
+.field input,
+
+.field select {
+
+  width: 100%;
+
+  height: 42px;
+
+  padding: 0 12px;
+
+  border: 1px solid #343439;
+
+  border-radius: 4px;
+
+  outline: none;
+
+  background: #0d0d0f;
+
+  color: var(--text);
+
+  font: inherit;
+
+}
+
+.field input::placeholder {
+
+  color: #6d6b67;
+
+}
+
+.field input:focus,
+
+.field select:focus {
+
+  border-color: #7d3034;
+
+  box-shadow: 0 0 0 2px rgba(227, 38, 46, .10);
+
+}
+
+.field select {
+
+  color-scheme: dark;
+
+}
+
+.field select option {
+
+  background: #111113;
+
+  color: #f4f2ee;
+
+}
+
+.field select option:checked {
+
+  background: #6f171c;
+
+  color: #fff;
+
+}
+
+.table-wrap {
+
+  overflow-x: auto;
+
+}
+
+table {
+
+  width: 100%;
+
+  min-width: 900px;
+
+  border-collapse: collapse;
+
+  font-family: var(--mono);
+
+}
+
+th,
+
+td {
+
+  padding: 13px 14px;
+
+  text-align: left;
+
+  border-bottom: 1px solid #242428;
+
+}
+
+th {
+
+  color: #8f8c86;
+
+  background: #0b0b0d;
+
+  font-size: .68rem;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: .08em;
+
+  white-space: nowrap;
+
+  user-select: none;
+
+}
+
+tbody tr {
+
+  cursor: pointer;
+
+  transition: background .10s ease;
+
+}
+
+tbody tr:nth-child(even) {
+
+  background: rgba(255,255,255,.012);
+
+}
+
+tbody tr:hover {
+
+  background: #18181b;
+
+}
+
+tbody tr:hover td:first-child {
+
+  box-shadow: inset 3px 0 0 var(--red);
+
+}
+
+.rank {
+
+  color: #f8f5ef;
+
+  font-size: 1rem;
+
+  font-weight: 800;
+
+}
+
+.player {
+
+  color: #fff;
+
+  font-family: var(--sans);
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+}
+
+.tag {
+
+  min-width: 40px;
+
+  height: 24px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0 7px;
+
+  border: 1px solid currentColor;
+
+  border-radius: 3px;
+
+  background: transparent;
+
+  font-family: var(--mono);
+
+  font-size: .7rem;
+
+  font-weight: 800;
+
+}
+
+/* ---------- 9. POSITION COLORS ---------- */
+
+.pos-qb { color: #ff7a73; background: rgba(255, 59, 48, .07); border-color: rgba(255, 59, 48, .32); }
+
+.pos-wr { color: #75baff; background: rgba(0, 122, 255, .07); border-color: rgba(0, 122, 255, .30); }
+
+.pos-rb { color: #80d79a; background: rgba(52, 199, 89, .07); border-color: rgba(52, 199, 89, .30); }
+
+.pos-te { color: #d09af0; background: rgba(175, 82, 222, .07); border-color: rgba(175, 82, 222, .30); }
+
+.pos-fb { color: #c99e7c; background: rgba(161, 106, 64, .07); border-color: rgba(161, 106, 64, .30); }
+
+.pos-ol { color: #eab25e; background: rgba(255, 149, 0, .07); border-color: rgba(255, 149, 0, .30); }
+
+.pos-ed { color: #f07a96; background: rgba(220, 20, 60, .07); border-color: rgba(220, 20, 60, .30); }
+
+.pos-dt { color: #c7c7ca; background: rgba(142, 142, 147, .07); border-color: rgba(142, 142, 147, .30); }
+
+.pos-lb { color: #86d994; background: rgba(50, 215, 75, .07); border-color: rgba(50, 215, 75, .30); }
+
+.pos-cb { color: #8ed9f4; background: rgba(90, 200, 250, .07); border-color: rgba(90, 200, 250, .30); }
+
+.pos-s  { color: #aaa8f4; background: rgba(88, 86, 214, .07); border-color: rgba(88, 86, 214, .30); }
+
+.pos-k  { color: #ec88a0; background: rgba(255, 45, 85, .07); border-color: rgba(255, 45, 85, .30); }
+
+.pos-p  { color: #81d5df; background: rgba(48, 176, 199, .07); border-color: rgba(48, 176, 199, .30); }
+
+.trend-up {
+
+  color: var(--green);
+
+  font-weight: 800;
+
+}
+
+.trend-down {
+
+  color: var(--yellow);
+
+  font-weight: 800;
+
+}
+
+.trend-flat {
+
+  color: var(--muted-2);
+
+  font-weight: 800;
+
+}
+
+/* ---------- 10. MOBILE PLAYER LIST ---------- */
+
+.mobile-list {
+
+  display: none;
+
+  padding: 6px;
+
+  gap: 0;
+
+}
+
+.mobile-card {
+
+  padding: 12px 11px;
+
+  border: 0;
+
+  border-bottom: 1px solid var(--border);
+
+  border-radius: 0;
+
+  background: transparent;
+
+  box-shadow: none;
+
+}
+
+.mobile-card:last-child {
+
+  border-bottom: 0;
+
+}
+
+.mobile-card:active {
+
+  background: #171719;
+
+}
+
+.mobile-card-top {
+
+  display: grid;
+
+  grid-template-columns: 1fr auto;
+
+  gap: 10px;
+
+  align-items: start;
+
+}
+
+.mobile-card h3 {
+
+  margin: 0;
+
+  font-family: var(--sans);
+
+  font-size: .98rem;
+
+  font-weight: 750;
+
+  line-height: 1.2;
+
+  letter-spacing: -.015em;
+
+}
+
+.mobile-card .school {
+
+  margin-top: 3px;
+
+  color: var(--muted);
+
+  font-size: .78rem;
+
+  line-height: 1.15;
+
+}
+
+.mobile-card .pos,
+
+.mobile-card .position {
+
+  padding: 3px 6px;
+
+  border: 1px solid var(--border-strong);
+
+  border-radius: 3px;
+
+  background: transparent;
+
+  color: var(--text);
+
+  font: 800 .67rem/1 var(--mono);
+
+  letter-spacing: .04em;
+
+  white-space: nowrap;
+
+}
+
+.mobile-meta {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 6px;
+
+  margin-top: 8px;
+
+  color: var(--muted-2);
+
+  font: .69rem/1 var(--mono);
+
+}
+
+.mobile-meta div {
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 0;
+
+  background: transparent;
+
+}
+
+.mobile-meta strong {
+
+  display: inline;
+
+  color: #d6d3cc;
+
+  font-size: .69rem;
+
+  font-weight: 800;
+
+}
+
+.mobile-meta span {
+
+  display: inline;
+
+  margin-left: 2px;
+
+  color: var(--muted-2);
+
+  font-size: .69rem;
+
+  text-transform: none;
+
+  letter-spacing: 0;
+
+}
+
+.mobile-meta div:not(:last-child)::after {
+
+  content: "/";
+
+  margin-left: 6px;
+
+  color: #494946;
+
+}
+
+/* ---------- 11. BOARD FOOTER ---------- */
+
+.panel-footer {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 11px 14px;
+
+  border-top: 1px solid var(--border);
+
+  background: #0b0b0d;
+
+  color: var(--muted-2);
+
+  font-family: var(--mono);
+
+  font-size: .72rem;
+
+}
+
+/* ---------- 12. METHOD / EXPLAINER CARDS ---------- */
+
+.method-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+}
+
+.method-card {
+
+  position: relative;
+
+  min-height: 180px;
+
+  padding: 18px 18px 20px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 5px;
+
+  background: #111113;
+
+}
+
+.method-icon {
+
+  width: auto;
+
+  height: auto;
+
+  display: block;
+
+  margin: 0 0 18px;
+
+  border: 0;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  color: var(--red);
+
+  font-size: 1.25rem;
+
+}
+
+.method-card h3 {
+
+  margin: 0 0 8px;
+
+  font-family: var(--serif);
+
+  font-size: 1.08rem;
+
+  font-weight: 700;
+
+}
+
+.method-card p {
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: .9rem;
+
+  line-height: 1.62;
+
+}
+
+/* ---------- 13. SUPPORT / CHARITY LINE ---------- */
+
+.support-line-desktop {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 0;
+
+  border: 0;
+
+  border-radius: 0;
+
+  background: transparent;
+
+  color: #8e8a84;
+
+  font: 600 .69rem/1 var(--mono);
+
+  letter-spacing: .06em;
+
+  text-transform: uppercase;
+
+}
+
+.support-line-desktop::before {
+
+  content: "•";
+
+  color: var(--red);
+
+}
+
+.support-line-desktop a {
+
+  color: #d8d4ce;
+
+  font-weight: 700;
+
+}
+
+.support-line-desktop a:hover {
+
+  color: #fff;
+
+  text-decoration: underline;
+
+  text-underline-offset: 3px;
+
+}
+
+/* ---------- 14. FOOTER ---------- */
+
+.footer {
+
+  padding: 20px 0 28px;
+
+  color: var(--muted);
+
+}
+
+.footer-inner {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid var(--border);
+
+  font-size: .82rem;
+
+}
+
+.no-results {
+
+  padding: 36px 20px;
+
+  color: var(--muted);
+
+  text-align: center;
+
+}
+
+/* ---------- 15. LOADING ---------- */
+
+.loading-small {
+
+  text-align: center;
+
+}
+
+.loading-small img {
+
+  width: 42px;
+
+  height: 42px;
+
+  opacity: .8;
+
+}
+
+/* ---------- 16. PLAYER WIDGET OVERLAY ---------- */
+
+.player-widget-container {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(0, 0, 0, .74);
+
+  animation: widget-overlay-in .14s ease-out;
+
+}
+
+.player-widget-box {
+
+  position: relative;
+
+  z-index: 1001;
+
+  animation: widget-box-in .16s ease-out;
+
+}
+
+.player-widget-box .widget-card {
+
+  border-top: 3px solid var(--red);
+
+  border-radius: 5px;
+
+  background: #101012;
+
+}
+
+.player-widget-content h2 {
+
+  margin: 0 34px 4px 0;
+
+  color: #fff;
+
+  font-family: var(--serif);
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  line-height: 1.08;
+
+  letter-spacing: -.025em;
+
+}
+
+.player-widget-content p {
+
+  margin: 0;
+
+}
+
+.player-widget-content br + strong {
+
+  display: inline-block;
+
+  margin-top: 9px;
+
+}
+
+.player-widget-content strong {
+
+  color: rgba(255,255,255,.95);
+
+  font-weight: 700;
+
+}
+
+.player-widget-close {
+
+  position: absolute;
+
+  top: -12px;
+
+  right: -12px;
+
+  z-index: 20;
+
+  width: 27px;
+
+  height: 27px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0;
+
+
+  border-radius: 16px;
+
+
+  color: #8f8c86;
+
+  font: 400 16px/1 Arial, sans-serif;
+
+  cursor: pointer;
+
+  transition: color .12s ease, border-color .12s ease, background .12s ease;
+
+}
+
+.player-widget-close:hover {
+
+  border-color: #702128;
+
+  background: #241416;
+
+  color: #ff6069;
+
+}
+
+.player-widget-close:active {
+
+  transform: translateY(1px);
+
+}
+
+.player-widget-close:focus-visible {
+
+  outline: 2px solid rgba(227, 38, 46, .75);
+
+  outline-offset: 2px;
+
+}
+
+@keyframes widget-overlay-in {
+
+  from { opacity: 0; }
+
+  to { opacity: 1; }
+
+}
+
+@keyframes widget-box-in {
+
+  from { opacity: 0; transform: translateY(5px); }
+
+  to { opacity: 1; transform: translateY(0); }
+
+}
+
+/* ---------- 17. REDUCED MOTION ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+
+  *::before,
+
+  *::after {
+
+    scroll-behavior: auto !important;
+
+    animation-duration: .01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: .01ms !important;
+
+  }
+
+}
+
+/* ---------- 18. MOBILE ---------- */
+
+@media (max-width: 760px) {
+
+  body {
+
+    background-size: 100% 44px, 44px 100%, auto;
+
+  }
+
+  #methodology {
+    display: none;
+  }
+
+  #heroText {
+    display: none;
+  }
+
+  .site-shell {
+
+    width: min(100% - 22px, var(--max));
+
+  }
+
+  .topbar-inner {
+
+    min-height: 62px;
+
+  }
+
+  .brand-title span {
+
+    display: none;
+
+  }
+
+  .hero {
+    padding: 14px 0 10px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .hero-card {
+    order: -1;
+    transform: none;
+    padding: 10px;
+  }
+
+  .logo-stage {
+    min-height: 165px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 10.5vw, 3rem);
+    line-height: .96;
+    letter-spacing: -.04em;
+  }
+
+  .hero-copy {
+    margin-bottom: 14px;
+    font-size: .92rem;
+    line-height: 1.48;
+  }
+
+  .hero-actions .button {
+
+    width: 100%;
+
+  }
+
+  .section {
+
+    padding: 20px 0;
+
+  }
+
+  .section-head {
+
+    align-items: start;
+
+    gap: 12px;
+
+  }
+
+  .section-head p {
+
+    font-size: .9rem;
+
+  }
+
+  .controls {
+
+    grid-template-columns: 1fr;
+
+    padding: 9px;
+
+  }
+
+  .table-wrap {
+
+    display: none;
+
+  }
+
+  .mobile-list {
+
+    display: grid;
+
+  }
+
+  .method-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+  }
+
+  .method-card,
+
+  .method-card:nth-child(2),
+
+  .method-card:nth-child(3) {
+
+    min-height: 0;
+
+    transform: none;
+
+  }
+
+  .quick-stats-3,
+
+  .quick-stats-2 {
+
+    grid-template-columns: repeat(3, 1fr);
+
+  }
+
+  .panel-footer {
+
+    flex-direction: column;
+
+  }
+
+  .footer-inner {
+
+    flex-direction: column;
+
+  }
+
+  .support-line-desktop {
+
+    display: none;
+
+  }
+
+  .player-widget-container {
+
+    padding: 14px;
+
+  }
+
+  .player-widget-box {
+
+    width: 100%;
+
+    max-width: 330px;
+
+  }
+
+  .player-widget-content h2 {
+
+    font-size: 21px;
+
+  }
+
+  .player-widget-content {
+
+    font-size: 14px;
+
+  }
+
+}
+
+@media (max-width: 480px) {
+  .quick-stats-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-stats-3 .stat {
+    padding: 12px 15px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .quick-stats-3 .stat strong {
+    font-family: var(--mono);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+  }
+
+  .quick-stats-3 .stat span {
+    margin-top: 0;
+    color: var(--muted-2);
+    font-family: var(--sans);
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+}
+
+/* ---------- 19. PLAYER PROFILE PAGE ---------- */
+
+.player-profile .hero:first-child {
+  padding-bottom: 0;
+}
+
+.player-profile .hero + .hero {
+  padding-top: 12px;
+}
+
+.player-profile .hero-card {
+  transform: none;
+}
+
+.player-profile .widget-header {
+  font-size: clamp(1.65rem, 5vw, 2.2rem);
+  line-height: 1.12;
+  overflow-wrap: anywhere;
+}
+
+.player-sub {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: .9rem;
+  line-height: 1.45;
+}
+
+.trend-chart {
+  min-width: 0;
+  margin: 16px 0 14px;
+}
+
+/* Keep two-column profile stats even on narrow screens. */
+.player-profile .quick-stats-2,
+.player-widget-content .quick-stats-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* ---------- 20. WEEKLY RANKING CHART ---------- */
+
+.bbh {
+  width: 100%;
+  margin: 0;
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+.bbh, .bbh * { box-sizing: border-box; }
+
+.bbh-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-bottom: 9px;
+}
+
+.bbh-heading {
+  color: #f2f0ec;
+  font-size: .86rem;
+  font-weight: 750;
+  letter-spacing: .008em;
+}
+
+.bbh-current {
+  flex: 0 0 auto;
+  color: #ff5267;
+  font-size: .77rem;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.bbh-canvas {
+  max-width: 100%;
+  border: 1px solid #303038;
+  border-radius: 9px;
+  background: #101114;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.bbh-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.bbh-grid {
+  stroke: #31333a;
+  stroke-width: 1;
+  stroke-dasharray: 3 5;
+}
+
+.bbh-axis,
+.bbh-axis-label {
+  fill: #a2a5af;
+  font-family: var(--sans);
+  font-size: 11px;
+}
+
+.bbh-axis-label {
+  font-weight: 650;
+  letter-spacing: .03em;
+}
+
+.bbh-path {
+  fill: none;
+  stroke: #ff344f;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bbh-area { opacity: .58; }
+
+.bbh-point {
+  outline: none;
+  cursor: crosshair;
+}
+
+.bbh-hit {
+  fill: transparent;
+  pointer-events: all;
+}
+
+.bbh-dot {
+  fill: #ff344f;
+  stroke: #101114;
+  stroke-width: 2;
+  transition: fill .13s ease, stroke .13s ease;
+}
+
+.bbh-point:hover .bbh-dot,
+.bbh-point:focus .bbh-dot {
+  r: 6;
+  fill: #ff7485;
+  stroke: #f5f3f0;
+  stroke-width: 2.2;
+}
+
+/* The tooltip is in its own topmost SVG layer. Individual visibility rules
+   are generated and scoped by trendChart.js, with no runtime JS required. */
+.bbh-tooltip {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 14px rgba(0,0,0,.75));
+  transition: opacity .12s ease;
+}
+
+.bbh-tooltip-bg {
+  fill: #191b22;
+  fill-opacity: 1;
+  stroke: #535762;
+  stroke-width: 1;
+}
+
+.bbh-tooltip-accent { fill: #ff465e; }
+
+.bbh-tooltip-date,
+.bbh-tooltip-rank,
+.bbh-tooltip-detail,
+.bbh-tooltip-average {
+  font-family: var(--sans);
+  stroke: none;
+}
+
+.bbh-tooltip-date {
+  fill: #b4bdce;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .025em;
+}
+
+.bbh-tooltip-rank {
+  fill: #fff;
+  font-size: 22px;
+  font-weight: 780;
+  letter-spacing: -.025em;
+}
+
+.bbh-tooltip-divider {
+  stroke: #383c46;
+  stroke-width: 1;
+}
+
+.bbh-tooltip-detail {
+  fill: #e7e9ee;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.bbh-tooltip-average {
+  fill: #aeb5c2;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.bbh-foot {
+  margin: 9px 0 0;
+  color: #989aa3;
+  font-size: .72rem;
+  line-height: 1.5;
+}
+
+.bbh-empty {
+  margin-top: 9px;
+  padding: 25px 12px;
+  border: 1px solid #303038;
+  border-radius: 9px;
+  background: #101114;
+  color: #a6a9b3;
+  font-size: .82rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .player-profile .widget-card { padding: 12px; }
+  .bbh-canvas {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  /* Preserve readable axes/tooltips instead of shrinking them to 6px. */
+  .bbh-svg { min-width: 540px; }
+  .bbh-foot { font-size: .68rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bbh-dot, .bbh-tooltip { transition: none; }
+}
+</style>
 
             <meta property="og:type" content="website">
             <meta property="og:site_name" content="BigBoard.cc">
@@ -15,7 +2028,7 @@
             <meta property="og:description" content="Carter Smith 2027 NFL Draft prospect profile. Indiana OL ranked #52 on the BigBoard.cc consensus big board with an average ranking of 54.3.">
             <meta property="og:url" content="https://bigboard.cc/players/carter-smith.html">
 
-            <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Carter Smith | 2027 NFL Draft Prospect","url":"https://bigboard.cc/players/carter-smith.html","description":"Carter Smith 2027 NFL Draft prospect profile. Indiana OL ranked #52 on the BigBoard.cc consensus big board","dateModified":"Oct 26, 2026","mainEntity":{"@type":"Person","name":"Carter Smith","affiliation":{"@type":"CollegeOrUniversity","name":"Indiana"},"description":"Indiana OL and 2027 NFL Draft prospect."}}</script>
+            <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Carter Smith | 2027 NFL Draft Prospect","url":"https://bigboard.cc/players/carter-smith.html","description":"Carter Smith 2027 NFL Draft prospect profile. Indiana OL ranked #52 on the BigBoard.cc consensus big board","dateModified":"2026-10-26","mainEntity":{"@type":"Person","name":"Carter Smith","affiliation":{"@type":"CollegeOrUniversity","name":"Indiana"},"description":"Indiana OL and 2027 NFL Draft prospect."}}</script>
         </head>
         <body>
 
@@ -32,14 +2045,14 @@
             </div>
         </header>
 
-        <main>
+        <main class="player-profile">
             <section class="hero">
                 <div class="player-shell">
                     <div class="hero-card">
                         <div class="section-head">
                             <div>
                                 <h2>Overview</h2>
-                                <p>Carter Smith is currently ranked #52 overall and #8 among offensive lines on the BigBoard.cc 2027 NFL Draft consensus big board.</p>
+                                <p>Carter Smith is currently ranked #52 overall and #8 among offensive line prospects on the BigBoard.cc 2027 NFL Draft consensus big board.</p>
                             </div>
                         </div>
                     </div>
@@ -56,16 +2069,402 @@
                             </div>
                         </div>
 
+                        <div class="trend-chart">
+                            <figure class="bbh" data-chart-id="bbh-1k83a9k">
+    <figcaption class="bbh-head"><span class="bbh-heading">Overall ranking history</span><span class="bbh-current">Latest #52</span></figcaption>
+    <div class="bbh-canvas"><svg class="bbh-svg" viewBox="0 0 660 278" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Carter Smith: weekly overall NFL Draft ranking, with number one highest">
+    <defs><linearGradient id="bbh-1k83a9k-gradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff344f" stop-opacity=".32"/><stop offset="100%" stop-color="#ff344f" stop-opacity="0"/></linearGradient></defs>
+    <text class="bbh-axis-label" x="49" y="15">OVERALL RANK</text>
+    <line class="bbh-grid" x1="49" x2="638" y1="25.00" y2="25.00" />
+      <text class="bbh-axis" x="38" y="29.00" text-anchor="end">#1</text><line class="bbh-grid" x1="49" x2="638" y1="74.87" y2="74.87" />
+      <text class="bbh-axis" x="38" y="78.87" text-anchor="end">#21</text><line class="bbh-grid" x1="49" x2="638" y1="124.75" y2="124.75" />
+      <text class="bbh-axis" x="38" y="128.75" text-anchor="end">#41</text><line class="bbh-grid" x1="49" x2="638" y1="174.62" y2="174.62" />
+      <text class="bbh-axis" x="38" y="178.62" text-anchor="end">#61</text><path class="bbh-area" fill="url(#bbh-1k83a9k-gradient)" d="M 49.00 94.82 L 70.04 127.24 L 91.07 67.39 L 112.11 82.35 L 133.14 82.35 L 154.18 87.34 L 175.21 64.90 L 196.25 52.43 L 217.29 52.43 L 238.32 52.43 L 259.36 57.42 L 280.39 89.84 L 301.43 72.38 L 322.46 69.89 L 343.50 69.89 L 364.54 69.89 L 385.57 59.91 L 406.61 67.39 L 427.64 99.81 L 448.68 122.25 L 469.71 112.28 L 490.75 104.80 L 511.79 109.78 L 532.82 129.73 L 553.86 129.73 L 574.89 132.23 L 595.93 134.72 L 616.96 154.67 L 638.00 152.18 L 638.00 222 L 49.00 222 Z" /><path class="bbh-path" d="M 49.00 94.82 L 70.04 127.24 L 91.07 67.39 L 112.11 82.35 L 133.14 82.35 L 154.18 87.34 L 175.21 64.90 L 196.25 52.43 L 217.29 52.43 L 238.32 52.43 L 259.36 57.42 L 280.39 89.84 L 301.43 72.38 L 322.46 69.89 L 343.50 69.89 L 364.54 69.89 L 385.57 59.91 L 406.61 67.39 L 427.64 99.81 L 448.68 122.25 L 469.71 112.28 L 490.75 104.80 L 511.79 109.78 L 532.82 129.73 L 553.86 129.73 L 574.89 132.23 L 595.93 134.72 L 616.96 154.67 L 638.00 152.18" /><text class="bbh-axis" x="49.00" y="250" text-anchor="start">Apr 13</text><text class="bbh-axis" x="238.32" y="250" text-anchor="middle">Jun 15</text><text class="bbh-axis" x="448.68" y="250" text-anchor="middle">Aug 24</text><text class="bbh-axis" x="638.00" y="250" text-anchor="end">Oct 26</text>
+    <g class="bbh-points"><g class="bbh-point" data-point="0" tabindex="0" role="group"
+    aria-label="Week of April 13, 2026; overall #29; position #3; 1 boards">
+      <circle class="bbh-hit" cx="49.00" cy="94.82" r="10" />
+      <circle class="bbh-dot" cx="49.00" cy="94.82" r="4.3" />
+    </g><g class="bbh-point" data-point="1" tabindex="0" role="group"
+    aria-label="Week of April 20, 2026; overall #42; position #5; 1 boards">
+      <circle class="bbh-hit" cx="70.04" cy="127.24" r="10" />
+      <circle class="bbh-dot" cx="70.04" cy="127.24" r="4.3" />
+    </g><g class="bbh-point" data-point="2" tabindex="0" role="group"
+    aria-label="Week of April 27, 2026; overall #18; position #4; 5 boards">
+      <circle class="bbh-hit" cx="91.07" cy="67.39" r="10" />
+      <circle class="bbh-dot" cx="91.07" cy="67.39" r="4.3" />
+    </g><g class="bbh-point" data-point="3" tabindex="0" role="group"
+    aria-label="Week of May 4, 2026; overall #24; position #5; 6 boards">
+      <circle class="bbh-hit" cx="112.11" cy="82.35" r="10" />
+      <circle class="bbh-dot" cx="112.11" cy="82.35" r="4.3" />
+    </g><g class="bbh-point" data-point="4" tabindex="0" role="group"
+    aria-label="Week of May 11, 2026; overall #24; position #5; 6 boards">
+      <circle class="bbh-hit" cx="133.14" cy="82.35" r="10" />
+      <circle class="bbh-dot" cx="133.14" cy="82.35" r="4.3" />
+    </g><g class="bbh-point" data-point="5" tabindex="0" role="group"
+    aria-label="Week of May 18, 2026; overall #26; position #5; 7 boards">
+      <circle class="bbh-hit" cx="154.18" cy="87.34" r="10" />
+      <circle class="bbh-dot" cx="154.18" cy="87.34" r="4.3" />
+    </g><g class="bbh-point" data-point="6" tabindex="0" role="group"
+    aria-label="Week of May 25, 2026; overall #17; position #4; 6 boards">
+      <circle class="bbh-hit" cx="175.21" cy="64.90" r="10" />
+      <circle class="bbh-dot" cx="175.21" cy="64.90" r="4.3" />
+    </g><g class="bbh-point" data-point="7" tabindex="0" role="group"
+    aria-label="Week of June 1, 2026; overall #12; position #1; 6 boards">
+      <circle class="bbh-hit" cx="196.25" cy="52.43" r="10" />
+      <circle class="bbh-dot" cx="196.25" cy="52.43" r="4.3" />
+    </g><g class="bbh-point" data-point="8" tabindex="0" role="group"
+    aria-label="Week of June 8, 2026; overall #12; position #1; 6 boards">
+      <circle class="bbh-hit" cx="217.29" cy="52.43" r="10" />
+      <circle class="bbh-dot" cx="217.29" cy="52.43" r="4.3" />
+    </g><g class="bbh-point" data-point="9" tabindex="0" role="group"
+    aria-label="Week of June 15, 2026; overall #12; position #1; 6 boards">
+      <circle class="bbh-hit" cx="238.32" cy="52.43" r="10" />
+      <circle class="bbh-dot" cx="238.32" cy="52.43" r="4.3" />
+    </g><g class="bbh-point" data-point="10" tabindex="0" role="group"
+    aria-label="Week of June 22, 2026; overall #14; position #4; 7 boards">
+      <circle class="bbh-hit" cx="259.36" cy="57.42" r="10" />
+      <circle class="bbh-dot" cx="259.36" cy="57.42" r="4.3" />
+    </g><g class="bbh-point" data-point="11" tabindex="0" role="group"
+    aria-label="Week of June 29, 2026; overall #27; position #4; 7 boards">
+      <circle class="bbh-hit" cx="280.39" cy="89.84" r="10" />
+      <circle class="bbh-dot" cx="280.39" cy="89.84" r="4.3" />
+    </g><g class="bbh-point" data-point="12" tabindex="0" role="group"
+    aria-label="Week of July 6, 2026; overall #20; position #4; 8 boards">
+      <circle class="bbh-hit" cx="301.43" cy="72.38" r="10" />
+      <circle class="bbh-dot" cx="301.43" cy="72.38" r="4.3" />
+    </g><g class="bbh-point" data-point="13" tabindex="0" role="group"
+    aria-label="Week of July 13, 2026; overall #19; position #4; 8 boards">
+      <circle class="bbh-hit" cx="322.46" cy="69.89" r="10" />
+      <circle class="bbh-dot" cx="322.46" cy="69.89" r="4.3" />
+    </g><g class="bbh-point" data-point="14" tabindex="0" role="group"
+    aria-label="Week of July 20, 2026; overall #19; position #4; 8 boards">
+      <circle class="bbh-hit" cx="343.50" cy="69.89" r="10" />
+      <circle class="bbh-dot" cx="343.50" cy="69.89" r="4.3" />
+    </g><g class="bbh-point" data-point="15" tabindex="0" role="group"
+    aria-label="Week of July 27, 2026; overall #19; position #4; 8 boards">
+      <circle class="bbh-hit" cx="364.54" cy="69.89" r="10" />
+      <circle class="bbh-dot" cx="364.54" cy="69.89" r="4.3" />
+    </g><g class="bbh-point" data-point="16" tabindex="0" role="group"
+    aria-label="Week of August 3, 2026; overall #15; position #4; 8 boards">
+      <circle class="bbh-hit" cx="385.57" cy="59.91" r="10" />
+      <circle class="bbh-dot" cx="385.57" cy="59.91" r="4.3" />
+    </g><g class="bbh-point" data-point="17" tabindex="0" role="group"
+    aria-label="Week of August 10, 2026; overall #18; position #4; 9 boards">
+      <circle class="bbh-hit" cx="406.61" cy="67.39" r="10" />
+      <circle class="bbh-dot" cx="406.61" cy="67.39" r="4.3" />
+    </g><g class="bbh-point" data-point="18" tabindex="0" role="group"
+    aria-label="Week of August 17, 2026; overall #31; position #4; 11 boards">
+      <circle class="bbh-hit" cx="427.64" cy="99.81" r="10" />
+      <circle class="bbh-dot" cx="427.64" cy="99.81" r="4.3" />
+    </g><g class="bbh-point" data-point="19" tabindex="0" role="group"
+    aria-label="Week of August 24, 2026; overall #40; position #6; 13 boards">
+      <circle class="bbh-hit" cx="448.68" cy="122.25" r="10" />
+      <circle class="bbh-dot" cx="448.68" cy="122.25" r="4.3" />
+    </g><g class="bbh-point" data-point="20" tabindex="0" role="group"
+    aria-label="Week of August 31, 2026; overall #36; position #5; 17 boards">
+      <circle class="bbh-hit" cx="469.71" cy="112.28" r="10" />
+      <circle class="bbh-dot" cx="469.71" cy="112.28" r="4.3" />
+    </g><g class="bbh-point" data-point="21" tabindex="0" role="group"
+    aria-label="Week of September 7, 2026; overall #33; position #5; 17 boards">
+      <circle class="bbh-hit" cx="490.75" cy="104.80" r="10" />
+      <circle class="bbh-dot" cx="490.75" cy="104.80" r="4.3" />
+    </g><g class="bbh-point" data-point="22" tabindex="0" role="group"
+    aria-label="Week of September 14, 2026; overall #35; position #5; 17 boards">
+      <circle class="bbh-hit" cx="511.79" cy="109.78" r="10" />
+      <circle class="bbh-dot" cx="511.79" cy="109.78" r="4.3" />
+    </g><g class="bbh-point" data-point="23" tabindex="0" role="group"
+    aria-label="Week of September 21, 2026; overall #43; position #6; 18 boards">
+      <circle class="bbh-hit" cx="532.82" cy="129.73" r="10" />
+      <circle class="bbh-dot" cx="532.82" cy="129.73" r="4.3" />
+    </g><g class="bbh-point" data-point="24" tabindex="0" role="group"
+    aria-label="Week of September 28, 2026; overall #43; position #7; 19 boards">
+      <circle class="bbh-hit" cx="553.86" cy="129.73" r="10" />
+      <circle class="bbh-dot" cx="553.86" cy="129.73" r="4.3" />
+    </g><g class="bbh-point" data-point="25" tabindex="0" role="group"
+    aria-label="Week of October 5, 2026; overall #44; position #7; 20 boards">
+      <circle class="bbh-hit" cx="574.89" cy="132.23" r="10" />
+      <circle class="bbh-dot" cx="574.89" cy="132.23" r="4.3" />
+    </g><g class="bbh-point" data-point="26" tabindex="0" role="group"
+    aria-label="Week of October 12, 2026; overall #45; position #7; 22 boards">
+      <circle class="bbh-hit" cx="595.93" cy="134.72" r="10" />
+      <circle class="bbh-dot" cx="595.93" cy="134.72" r="4.3" />
+    </g><g class="bbh-point" data-point="27" tabindex="0" role="group"
+    aria-label="Week of October 19, 2026; overall #53; position #8; 24 boards">
+      <circle class="bbh-hit" cx="616.96" cy="154.67" r="10" />
+      <circle class="bbh-dot" cx="616.96" cy="154.67" r="4.3" />
+    </g><g class="bbh-point" data-point="28" tabindex="0" role="group"
+    aria-label="Week of October 26, 2026; overall #52; position #8; 24 boards">
+      <circle class="bbh-hit" cx="638.00" cy="152.18" r="10" />
+      <circle class="bbh-dot" cx="638.00" cy="152.18" r="4.3" />
+    </g></g>
+    <g class="bbh-tooltips"><g class="bbh-tooltip" data-point="0" transform="translate(63.0 108.8)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF APR 13, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#29 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #3 · 1 board</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 29.0</text>
+  </g><g class="bbh-tooltip" data-point="1" transform="translate(84.0 141.2)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF APR 20, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#42 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #5 · 1 board</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 29.0</text>
+  </g><g class="bbh-tooltip" data-point="2" transform="translate(105.1 81.4)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF APR 27, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#18 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #4 · 5 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 23.7</text>
+  </g><g class="bbh-tooltip" data-point="3" transform="translate(126.1 96.4)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF MAY 4, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#24 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #5 · 6 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 36.9</text>
+  </g><g class="bbh-tooltip" data-point="4" transform="translate(147.1 96.4)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF MAY 11, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#24 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #5 · 6 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 38.1</text>
+  </g><g class="bbh-tooltip" data-point="5" transform="translate(168.2 101.3)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF MAY 18, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#26 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #5 · 7 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 35.9</text>
+  </g><g class="bbh-tooltip" data-point="6" transform="translate(189.2 78.9)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF MAY 25, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#17 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #4 · 6 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 22.5</text>
+  </g><g class="bbh-tooltip" data-point="7" transform="translate(210.3 66.4)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF JUN 1, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#12 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #1 · 6 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 17.8</text>
+  </g><g class="bbh-tooltip" data-point="8" transform="translate(231.3 66.4)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF JUN 8, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#12 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #1 · 6 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 17.6</text>
+  </g><g class="bbh-tooltip" data-point="9" transform="translate(252.3 66.4)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF JUN 15, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#12 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #1 · 6 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 17.1</text>
+  </g><g class="bbh-tooltip" data-point="10" transform="translate(273.4 71.4)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF JUN 22, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#14 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #4 · 7 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 20.9</text>
+  </g><g class="bbh-tooltip" data-point="11" transform="translate(294.4 103.8)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF JUN 29, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#27 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #4 · 7 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 37.6</text>
+  </g><g class="bbh-tooltip" data-point="12" transform="translate(315.4 86.4)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF JUL 6, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#20 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #4 · 8 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 28.4</text>
+  </g><g class="bbh-tooltip" data-point="13" transform="translate(336.5 83.9)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF JUL 13, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#19 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #4 · 8 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 26.9</text>
+  </g><g class="bbh-tooltip" data-point="14" transform="translate(357.5 83.9)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF JUL 20, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#19 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #4 · 8 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 25.8</text>
+  </g><g class="bbh-tooltip" data-point="15" transform="translate(378.5 83.9)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF JUL 27, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#19 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #4 · 8 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 24.1</text>
+  </g><g class="bbh-tooltip" data-point="16" transform="translate(399.6 73.9)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF AUG 3, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#15 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #4 · 8 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 18.9</text>
+  </g><g class="bbh-tooltip" data-point="17" transform="translate(420.6 81.4)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF AUG 10, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#18 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #4 · 9 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 21.6</text>
+  </g><g class="bbh-tooltip" data-point="18" transform="translate(193.6 113.8)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF AUG 17, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#31 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #4 · 11 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 32.7</text>
+  </g><g class="bbh-tooltip" data-point="19" transform="translate(214.7 136.3)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF AUG 24, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#40 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #6 · 13 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 39.3</text>
+  </g><g class="bbh-tooltip" data-point="20" transform="translate(235.7 126.3)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF AUG 31, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#36 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #5 · 17 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 36.6</text>
+  </g><g class="bbh-tooltip" data-point="21" transform="translate(256.8 118.8)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF SEP 7, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#33 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #5 · 17 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 35.2</text>
+  </g><g class="bbh-tooltip" data-point="22" transform="translate(277.8 123.8)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF SEP 14, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#35 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #5 · 17 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 37.4</text>
+  </g><g class="bbh-tooltip" data-point="23" transform="translate(298.8 143.7)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF SEP 21, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#43 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #6 · 18 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 43.5</text>
+  </g><g class="bbh-tooltip" data-point="24" transform="translate(319.9 143.7)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF SEP 28, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#43 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #7 · 19 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 42.7</text>
+  </g><g class="bbh-tooltip" data-point="25" transform="translate(340.9 146.2)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF OCT 5, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#44 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #7 · 20 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 42.5</text>
+  </g><g class="bbh-tooltip" data-point="26" transform="translate(361.9 12.7)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF OCT 12, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#45 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #7 · 22 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 45.0</text>
+  </g><g class="bbh-tooltip" data-point="27" transform="translate(383.0 32.7)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF OCT 19, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#53 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #8 · 24 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 54.3</text>
+  </g><g class="bbh-tooltip" data-point="28" transform="translate(404.0 30.2)" aria-hidden="true">
+    <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
+    <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
+    <text class="bbh-tooltip-date" x="14" y="20">WEEK OF OCT 26, 2026</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#52 overall</text>
+    <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #8 · 24 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 54.3</text>
+  </g></g>
+  </svg></div>
+    <p class="bbh-foot">Weekly snapshots (Monday–Sunday) · Lower ranks are better · 29 weeks</p>
+    <style>.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="0"]:hover) .bbh-tooltip[data-point="0"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="0"]:focus) .bbh-tooltip[data-point="0"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="1"]:hover) .bbh-tooltip[data-point="1"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="1"]:focus) .bbh-tooltip[data-point="1"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="2"]:hover) .bbh-tooltip[data-point="2"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="2"]:focus) .bbh-tooltip[data-point="2"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="3"]:hover) .bbh-tooltip[data-point="3"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="3"]:focus) .bbh-tooltip[data-point="3"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="4"]:hover) .bbh-tooltip[data-point="4"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="4"]:focus) .bbh-tooltip[data-point="4"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="5"]:hover) .bbh-tooltip[data-point="5"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="5"]:focus) .bbh-tooltip[data-point="5"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="6"]:hover) .bbh-tooltip[data-point="6"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="6"]:focus) .bbh-tooltip[data-point="6"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="7"]:hover) .bbh-tooltip[data-point="7"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="7"]:focus) .bbh-tooltip[data-point="7"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="8"]:hover) .bbh-tooltip[data-point="8"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="8"]:focus) .bbh-tooltip[data-point="8"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="9"]:hover) .bbh-tooltip[data-point="9"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="9"]:focus) .bbh-tooltip[data-point="9"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="10"]:hover) .bbh-tooltip[data-point="10"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="10"]:focus) .bbh-tooltip[data-point="10"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="11"]:hover) .bbh-tooltip[data-point="11"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="11"]:focus) .bbh-tooltip[data-point="11"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="12"]:hover) .bbh-tooltip[data-point="12"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="12"]:focus) .bbh-tooltip[data-point="12"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="13"]:hover) .bbh-tooltip[data-point="13"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="13"]:focus) .bbh-tooltip[data-point="13"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="14"]:hover) .bbh-tooltip[data-point="14"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="14"]:focus) .bbh-tooltip[data-point="14"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="15"]:hover) .bbh-tooltip[data-point="15"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="15"]:focus) .bbh-tooltip[data-point="15"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="16"]:hover) .bbh-tooltip[data-point="16"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="16"]:focus) .bbh-tooltip[data-point="16"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="17"]:hover) .bbh-tooltip[data-point="17"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="17"]:focus) .bbh-tooltip[data-point="17"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="18"]:hover) .bbh-tooltip[data-point="18"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="18"]:focus) .bbh-tooltip[data-point="18"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="19"]:hover) .bbh-tooltip[data-point="19"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="19"]:focus) .bbh-tooltip[data-point="19"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="20"]:hover) .bbh-tooltip[data-point="20"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="20"]:focus) .bbh-tooltip[data-point="20"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="21"]:hover) .bbh-tooltip[data-point="21"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="21"]:focus) .bbh-tooltip[data-point="21"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="22"]:hover) .bbh-tooltip[data-point="22"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="22"]:focus) .bbh-tooltip[data-point="22"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="23"]:hover) .bbh-tooltip[data-point="23"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="23"]:focus) .bbh-tooltip[data-point="23"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="24"]:hover) .bbh-tooltip[data-point="24"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="24"]:focus) .bbh-tooltip[data-point="24"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="25"]:hover) .bbh-tooltip[data-point="25"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="25"]:focus) .bbh-tooltip[data-point="25"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="26"]:hover) .bbh-tooltip[data-point="26"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="26"]:focus) .bbh-tooltip[data-point="26"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="27"]:hover) .bbh-tooltip[data-point="27"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="27"]:focus) .bbh-tooltip[data-point="27"]{opacity:1;visibility:visible}
+.bbh[data-chart-id="bbh-1k83a9k"]:has(.bbh-point[data-point="28"]:hover) .bbh-tooltip[data-point="28"],.bbh[data-chart-id="bbh-1k83a9k"]:not(:has(.bbh-point:hover)):has(.bbh-point[data-point="28"]:focus) .bbh-tooltip[data-point="28"]{opacity:1;visibility:visible}</style>
+  </figure>
+                        </div>
+
                         <div class="quick-stats-2">
-
-                            <div class="stat">
-                                <strong>OL</strong>
-                                <span>Position</span>
-                            </div>
-                            <div class="stat">
-
-                            </div>
-
                             <div class="stat">
                                 <strong>#52</strong>
                                 <span>Overall</span>
@@ -74,7 +2473,6 @@
                                 <strong>#8</strong>
                                 <span>Offensive Line</span>
                             </div>
-
                             <div class="stat">
                                 <strong>6′ 5″</strong>
                                 <span>Height</span>
@@ -87,7 +2485,6 @@
                     </div>
                 </div>
             </section>
-
         </main>
 
         <footer class="footer">
