@@ -116,6 +116,73 @@ async function filterSchool(){
     });
 };
 
+async function tableTooltips(){
+    document.addEventListener('DOMContentLoaded', () => {
+        const tooltip = document.createElement('div');
+        tooltip.id = 'floating-header-tooltip';
+        tooltip.setAttribute('role', 'tooltip');
+        document.body.appendChild(tooltip);
+
+        let active = null;
+
+        function positionTooltip() {
+            if (!active) return;
+
+            const rect = active.getBoundingClientRect();
+            const width = tooltip.offsetWidth;
+            const height = tooltip.offsetHeight;
+            const margin = 12;
+
+            // Center on icon, but stay inside viewport
+            const left = Math.max(margin, Math.min(
+                rect.left + rect.width / 2 - width / 2,
+                window.innerWidth - width - margin
+            ));
+
+            // Prefer below; flip above if necessary
+            let top = rect.bottom + 10;
+            if (top + height > window.innerHeight - margin) {
+                top = rect.top - height - 10;
+            }
+
+            tooltip.style.left = `${left}px`;
+            tooltip.style.top = `${Math.max(margin, top)}px`;
+        }
+
+        function showTooltip(element) {
+            active = element;
+            tooltip.textContent = element.dataset.tooltip;
+            tooltip.style.display = 'block';
+            positionTooltip();
+        }
+
+        function hideTooltip(element) {
+            if (active !== element) return;
+            active = null;
+            tooltip.style.display = 'none';
+        }
+
+        document.querySelectorAll('.header-help[data-tooltip]')
+            .forEach(element => {
+                element.addEventListener('mouseenter', () =>
+                    showTooltip(element));
+                element.addEventListener('mouseleave', () =>
+                    hideTooltip(element));
+                element.addEventListener('focus', () =>
+                    showTooltip(element));
+                element.addEventListener('blur', () =>
+                    hideTooltip(element));
+
+                // Avoid accidentally sorting the column
+                element.addEventListener('click', event =>
+                    event.stopPropagation());
+            });
+
+        window.addEventListener('scroll', positionTooltip, true);
+        window.addEventListener('resize', positionTooltip);
+    });
+}
+
 // ===================================
 // Initialize
 // ===================================
@@ -123,3 +190,4 @@ searchBox();
 filterPostion();
 filterSchool();
 playerLinks();
+tableTooltips();

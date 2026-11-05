@@ -2008,3 +2008,72 @@ tbody tr:hover td:first-child {
 @media (prefers-reduced-motion: reduce) {
   .bbh-dot, .bbh-tooltip { transition: none; }
 }
+
+
+
+.header-help {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+    font-size: 12px;
+    color: #999;
+    cursor: help;
+    vertical-align: middle;
+    opacity: 0.7;
+}
+
+.header-help:hover,
+.header-help:focus-visible {
+    color: #ddd;
+    opacity: 1;
+}
+
+/* Custom tooltip bubble */
+
+.header-help {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+    font-size: 12px;
+    color: #999;
+    cursor: help;
+    vertical-align: middle;
+    opacity: 0.7;
+}
+
+.header-help:hover,
+.header-help:focus-visible {
+    color: #ddd;
+    opacity: 1;
+}
+
+/* Tooltip positioned outside the table */
+#floating-header-tooltip {
+    position: fixed;
+    display: none;
+    z-index: 2147483647;
+
+    width: max-content;
+    max-width: min(280px, calc(100vw - 24px));
+    box-sizing: border-box;
+    padding: 9px 12px;
+
+    background: #1c1c1c;
+    color: #e5e5e5;
+    border: 1px solid #555;
+    border-radius: 12px;
+
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+    text-transform: none;
+    white-space: normal;
+    overflow-wrap: break-word;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    pointer-events: none;
+}
