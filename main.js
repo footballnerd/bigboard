@@ -65,48 +65,44 @@ async function searchBox(){
     });
 };
 
+function filterPlayers() {
+    const positionSelect = document.querySelector("#positionFilter");
+    const schoolSelect = document.querySelector("#schoolFilter");
+    const rows = document.querySelectorAll(".player-row");
+
+    for (const row of rows) {
+        const rowPosition = (row.dataset.position || "").trim().toLowerCase();
+        const rowSchool = (row.dataset.school || "").trim().toLowerCase();
+
+        const matchesPosition =
+            positionSelect.selectedIndex === 0 ||
+            rowPosition === positionSelect.value.trim().toLowerCase();
+
+        const matchesSchool =
+            schoolSelect.selectedIndex === 0 ||
+            rowSchool === schoolSelect.value.trim().toLowerCase();
+
+        row.style.display =
+            matchesPosition && matchesSchool ? "revert" : "none";
+    }
+}
+
 // ===================================
 // Position filter
 // ===================================
-async function filterPostion(){
-    // Add the event listener to the dropdown menu
-    const select = document.querySelector("#positionFilter");
-    select.addEventListener('change', async() => {
-        await filter(); // Call the helper
-    });
-    // Filter helper
-    async function filter(){
-        const rows = Array.from(document.querySelectorAll('.player-row'));
-        for (const row of rows){
-            const text = row.dataset.position;
-            const isMatch = text.toLowerCase() == select.value.toLowerCase();
-            if (isMatch || select.selectedIndex === 0){
-                row.style.display = "revert";
-            } else {
-                row.style.display = "none";
-            };
-        };
-    };
-};
+function filterPostion() {
+    document.querySelector("#positionFilter")
+        .addEventListener("change", filterPlayers);
+}
 
 // ===================================
 // School filter
 // ===================================
-async function filterSchool(){
-    const select = document.querySelector("#schoolFilter");
-    select.addEventListener('change', async() => {
-        const rows = Array.from(document.querySelectorAll('.player-row'));
-        for (const row of rows){
-            const text = row.dataset.school;
-            const isMatch = text.toLowerCase() == select.value.toLowerCase();
-            if (isMatch || select.selectedIndex === 0){
-                row.style.display = "revert";
-            } else {
-                row.style.display = "none";
-            };
-        };
-    });
-};
+function filterSchool() {
+    document.querySelector("#schoolFilter")
+        .addEventListener("change", filterPlayers);
+}
+
 
 async function tableTooltips(){
     document.addEventListener('DOMContentLoaded', () => {
