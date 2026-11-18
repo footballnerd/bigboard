@@ -74,14 +74,6 @@ async function filterPostion(){
     select.addEventListener('change', async() => {
         await filter(); // Call the helper
     });
-    // Parse URL for position indicator (?position=X)
-    const params = new URLSearchParams(window.location.search);
-    const position = params.get("position");
-    if (position){
-        document.querySelector("#positionFilter").value = position;
-        document.title = `${position.toUpperCase()} Rankings | BigBoard.cc`;
-        await filter(); // Call the helper
-    };
     // Filter helper
     async function filter(){
         const rows = Array.from(document.querySelectorAll('.player-row'));
