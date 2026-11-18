@@ -15002,27 +15002,33 @@
 	<script type="module" src="main.js"></script>
 
 <script>
-            (() => {
-                const requested = "qb";
-                const select = document.getElementById("positionFilter");
-                if (!select) return;
+(() => {
+    const requested = "qb";
 
-                const selectPosition = () => {
-                    const option = Array.from(select.options).find(
-                        option => option.value.toLowerCase() === requested
-                    );
-                    if (!option) return false;
-                    select.value = option.value;
-                    select.dispatchEvent(new Event("change", { bubbles: true }));
-                    return true;
-                };
+    function applyInitialPosition() {
+        const select = document.getElementById("positionFilter");
+        if (!select) {
+            console.warn("Position filter not found on this page.");
+            return;
+        }
 
-                if (!selectPosition()) {
-                    const observer = new MutationObserver(() => {
-                        if (selectPosition()) observer.disconnect();
-                    });
-                    observer.observe(select, { childList: true });
-                }
-            })();
-            </script>
+        const option = Array.from(select.options).find(
+            item => item.value.toLowerCase() === requested
+        );
+        if (!option) {
+            console.warn("Position option not found:", requested);
+            return;
+        }
+
+        select.value = option.value;
+        select.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+
+    if (document.readyState === "complete") {
+        applyInitialPosition();
+    } else {
+        window.addEventListener("load", applyInitialPosition, { once: true });
+    }
+})();
+</script>
 </body></html>
