@@ -47,44 +47,46 @@ async function playerLinks(){
 };
 
 // ===================================
-// Player search box
+// Combined player filtering
 // ===================================
-async function searchBox(){
-    const input = document.querySelector("#searchInput");
-    input.addEventListener('input', async() => {
-        const rows = Array.from(document.querySelectorAll('.player-row'));
-        for (const row of rows){
-            const text = row.dataset.player;
-            const isMatch = text.toLowerCase().includes(input.value.toLowerCase());
-            if (isMatch){
-                row.style.display = "revert";
-            } else {
-                row.style.display = "none";
-            };
-        };
-    });
-};
-
 function filterPlayers() {
+    const searchInput = document.querySelector("#searchInput");
     const positionSelect = document.querySelector("#positionFilter");
     const schoolSelect = document.querySelector("#schoolFilter");
     const rows = document.querySelectorAll(".player-row");
 
+    const searchValue = searchInput.value.trim().toLowerCase();
+    const positionValue = positionSelect.value.trim().toLowerCase();
+    const schoolValue = schoolSelect.value.trim().toLowerCase();
+
     for (const row of rows) {
+        const rowPlayer = (row.dataset.player || "").toLowerCase();
         const rowPosition = (row.dataset.position || "").trim().toLowerCase();
         const rowSchool = (row.dataset.school || "").trim().toLowerCase();
 
+        const matchesPlayer = rowPlayer.includes(searchValue);
+
         const matchesPosition =
             positionSelect.selectedIndex === 0 ||
-            rowPosition === positionSelect.value.trim().toLowerCase();
+            rowPosition === positionValue;
 
         const matchesSchool =
             schoolSelect.selectedIndex === 0 ||
-            rowSchool === schoolSelect.value.trim().toLowerCase();
+            rowSchool === schoolValue;
 
         row.style.display =
-            matchesPosition && matchesSchool ? "revert" : "none";
+            matchesPlayer && matchesPosition && matchesSchool
+                ? "revert"
+                : "none";
     }
+}
+
+// ===================================
+// Player search box
+// ===================================
+function searchBox() {
+    document.querySelector("#searchInput")
+        .addEventListener("input", filterPlayers);
 }
 
 // ===================================
@@ -103,6 +105,19 @@ function filterSchool() {
         .addEventListener("change", filterPlayers);
 }
 
+// ===================================
+// Reset button
+// ===================================
+function resetButton() {
+    document.querySelector("#resetButton")
+        .addEventListener("click", () => {
+            document.querySelector("#searchInput").value = "";
+            document.querySelector("#positionFilter").selectedIndex = 0;
+            document.querySelector("#schoolFilter").selectedIndex = 0;
+
+            filterPlayers();
+        });
+}
 
 async function tableTooltips(){
     document.addEventListener('DOMContentLoaded', () => {
@@ -177,5 +192,6 @@ async function tableTooltips(){
 searchBox();
 filterPostion();
 filterSchool();
+resetButton();
 playerLinks();
 tableTooltips();
