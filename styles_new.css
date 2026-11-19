@@ -150,7 +150,7 @@ img {
 
 .player-shell {
 
-  width: min(650px, calc(100% - 32px));
+  width: 50%;
 
   margin: 0 auto;
 
