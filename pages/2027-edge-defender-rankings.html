@@ -51,6 +51,7 @@
     <script type="application/ld+json" id="header-date">{"@context":"https://schema.org","@type":"WebPage","dateModified":"2026-11-18"}</script>
 
 <style id="initial-position-filter">
+            body:has(#positionFilter option[value="ed" i]:checked)
             .player-row:not([data-position="ed" i]) {
                 display: none;
             }
@@ -99,7 +100,7 @@
 			</div>
 			<div class="quick-stats-3">
 				<div class="stat"><strong id="statPlayers">290</strong><span>Prospects</span></div>
-				<div class="stat"><strong id="statBoards">57</strong><span>Boards</span></div>
+				<div class="stat"><strong id="statBoards">58</strong><span>Boards</span></div>
 				<div class="stat"><strong id="statUpdated"><time datetime="2026-11-18">Nov 18, 2026</time></strong><span>Updated</span></div>
 			</div>
 			</aside>
@@ -143,9 +144,19 @@
 				<input id="searchInput" type="search" placeholder="Player search..." aria-label="Search players" autocomplete="off">
 				</div>
 				<div class="field">
-				<select id="positionFilter" aria-label="Filter by position">
-					
-				<option value="">Position</option><option value="cb">Cornerback</option><option value="dt">Defensive Tackle</option><option value="ed">Edge Defender</option><option value="lb">Linebacker</option><option value="ol">Offensive Line</option><option value="qb">Quarterback</option><option value="rb">Running Back</option><option value="s">Safety</option><option value="te">Tight End</option><option value="wr">Wide Receiver</option></select>
+				<select id="positionFilter" aria-label="Filter by position" data-preloaded-positions="true">
+    <option value="">Position</option>
+    <option value="cb">Cornerback</option>
+    <option value="dt">Defensive Tackle</option>
+    <option value="ed" selected>Edge Defender</option>
+    <option value="lb">Linebacker</option>
+    <option value="ol">Offensive Line</option>
+    <option value="qb">Quarterback</option>
+    <option value="rb">Running Back</option>
+    <option value="s">Safety</option>
+    <option value="te">Tight End</option>
+    <option value="wr">Wide Receiver</option>
+</select>
 				</div>
 				<div class="field">
 				<select id="schoolFilter" aria-label="Filter by school">
@@ -15009,49 +15020,4 @@
 
 	<script type="module" src="main.js"></script>
 
-<script>
-        (() => {
-            const requested = "ed";
-
-            function initializePositionFilter() {
-                const select = document.getElementById("positionFilter");
-                if (!select) {
-                    console.warn("Position filter not found on this page.");
-                    return;
-                }
-
-                const option = Array.from(select.options).find(
-                    item => item.value.toLowerCase() === requested
-                );
-                if (!option) {
-                    console.warn("Position option not found:", requested);
-                    return;
-                }
-
-                // Match the dropdown to the initially visible CSS-filtered rows.
-                select.value = option.value;
-
-                const removeInitialCss = () => {
-                    document.getElementById("initial-position-filter")?.remove();
-                };
-
-                // Capture runs before the site's normal input/change handlers.
-                // Those handlers can then show any matching rows, regardless
-                // of which position the page initially displayed.
-                select.addEventListener("change", removeInitialCss, { once: true, capture: true });
-                document.getElementById("schoolFilter")?.addEventListener(
-                    "change", removeInitialCss, { once: true, capture: true }
-                );
-                document.getElementById("searchInput")?.addEventListener(
-                    "input", removeInitialCss, { once: true, capture: true }
-                );
-            }
-
-            if (document.readyState === "complete") {
-                initializePositionFilter();
-            } else {
-                window.addEventListener("load", initializePositionFilter, { once: true });
-            }
-        })();
-        </script>
 </body></html>
