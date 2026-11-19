@@ -20,6 +20,7 @@ async function playerLinks(){
         document.body.appendChild(widget);
         // Fetch player data
         const player = row.dataset.player;
+        console.log(player);
         const url = `/players/${player.replace(/ /g,'-').replace(/'/g,'').toLowerCase()}.html`;
         const response = await fetch(url);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -32,6 +33,13 @@ async function playerLinks(){
             <div>
                 ${card.outerHTML}
             </div>`;
+        // Build player links
+        const playerPageLinks = ["Overview","Statistics","Advanced","Portal","Recruiting","Compare"];
+        document.querySelector('.bbh-current').innerHTML = playerPageLinks.map(i => 
+            `<a href="${url}" class="button button-secondary">${i}</a>`
+        ).join(' ');
+        // Remove the "overall ranking history" text
+        document.querySelector('.bbh-heading').remove();
         // Close widget
         document.querySelector('.player-widget-close').innerHTML = "X";
         document.querySelector('.player-widget-close').style.border = "3px solid #DC262D";
