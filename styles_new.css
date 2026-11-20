@@ -568,6 +568,9 @@ h1.widget-header {
 
 }
 
+.button-flex {
+  flex: 1;
+}
 
 
 /* ---------- 6. HERO / WIDGET CARDS ---------- */
@@ -1898,6 +1901,12 @@ tbody tr:hover td:first-child {
 
   white-space: nowrap;
 
+  display: flex;
+
+  gap: 8px;
+
+  width: 100%;
+
 }
 
 
@@ -2672,6 +2681,10 @@ tbody tr:hover td:first-child {
 
     color: #494946;
 
+  }
+
+  #resetButton {
+    width: 100%:
   }
 
   
