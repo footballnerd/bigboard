@@ -454,16 +454,6 @@ h1.widget-header {
 
 
 
-.gradient-text {
-
-  color: #f4f0e9;
-
-  background: none;
-
-  -webkit-text-fill-color: initial;
-
-}
-
 
 
 .hero-copy {
@@ -554,7 +544,7 @@ h1.widget-header {
 
 .button-primary:hover {
 
-  background: #f02b34;
+  background: #f7000f;
 
   border-color: #f02b34;
 
@@ -2684,7 +2674,7 @@ tbody tr:hover td:first-child {
   }
 
   #resetButton {
-    width: 100%:
+    width: 100%;
   }
 
   
