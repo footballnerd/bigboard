@@ -58,9 +58,9 @@ async function playerLinks(){
 // Combined player filtering
 // ===================================
 function filterPlayers() {
-    const searchInput = document.querySelector("#searchInput");
-    const positionSelect = document.querySelector("#positionFilter");
-    const schoolSelect = document.querySelector("#schoolFilter");
+    //const searchInput = document.querySelector("#searchInput");
+    //const positionSelect = document.querySelector("#positionFilter");
+    //const schoolSelect = document.querySelector("#schoolFilter");
     const rows = document.querySelectorAll(".player-row");
 
     const searchValue = searchInput.value.trim().toLowerCase();
@@ -197,9 +197,9 @@ async function tableTooltips(){
 // ===================================
 // Initialize
 // ===================================
-searchBox();
-filterPostion();
-filterSchool();
-resetButton();
+//searchBox();
+//filterPostion();
+//filterSchool();
+//resetButton();
 playerLinks();
 tableTooltips();
