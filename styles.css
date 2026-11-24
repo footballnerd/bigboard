@@ -440,7 +440,7 @@ h1.widget-header {
 
   gap: 9px;
 
-  padding: 0 15px;
+  aspect-ratio: 1;
 
   border: 1px solid var(--border-strong);
 
@@ -450,7 +450,7 @@ h1.widget-header {
 
   color: #f6f4ef;
 
-  font: 700 .83rem/1 var(--sans);
+  font: 700 .66rem/1 var(--sans);
 
   letter-spacing: .015em;
 
@@ -1978,6 +1978,71 @@ tbody tr:hover td:first-child {
 
   pointer-events: none;
 
+}
+
+.ranking-tabs {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.ranking-tab {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    padding: 4px 0 9px;
+    color: #888;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 150ms, border-color 150ms;
+}
+
+.ranking-tab:hover {
+    color: #fff;
+}
+
+.ranking-tab.active {
+    color: #fff;
+    border-bottom-color: #ed202e;
+}
+
+.ranking-tab:focus-visible {
+    outline: 2px solid #ed202e;
+    outline-offset: 4px;
+}
+
+#ranksByPosition[hidden],
+#ranksBySchool[hidden] {
+    display: none !important;
+}
+
+#schoolSelector {
+    width: 280px;
+    max-width: 100%;
+    min-height: 42px;
+    padding: 10px 14px;
+    background: #151516;
+    color: #fff;
+    border: 1px solid #3b3b3e;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 13px;
+    color-scheme: dark;
+    cursor: pointer;
+}
+
+@media (max-width: 760px) {
+    .ranking-tabs {
+        gap: 20px;
+    }
+
+    #schoolSelector {
+        width: 100%;
+    }
 }
 
 /*

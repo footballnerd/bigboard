@@ -53,79 +53,6 @@ async function playerLinks(){
     });
 };
 
-// ===================================
-// Combined player filtering
-// ===================================
-function filterPlayers() {
-    //const searchInput = document.querySelector("#searchInput");
-    //const positionSelect = document.querySelector("#positionFilter");
-    //const schoolSelect = document.querySelector("#schoolFilter");
-    const rows = document.querySelectorAll(".player-row");
-
-    const searchValue = searchInput.value.trim().toLowerCase();
-    const positionValue = positionSelect.value.trim().toLowerCase();
-    const schoolValue = schoolSelect.value.trim().toLowerCase();
-
-    for (const row of rows) {
-        const rowPlayer = (row.dataset.player || "").toLowerCase();
-        const rowPosition = (row.dataset.position || "").trim().toLowerCase();
-        const rowSchool = (row.dataset.school || "").trim().toLowerCase();
-
-        const matchesPlayer = rowPlayer.includes(searchValue);
-
-        const matchesPosition =
-            positionSelect.selectedIndex === 0 ||
-            rowPosition === positionValue;
-
-        const matchesSchool =
-            schoolSelect.selectedIndex === 0 ||
-            rowSchool === schoolValue;
-
-        row.style.display =
-            matchesPlayer && matchesPosition && matchesSchool
-                ? "revert"
-                : "none";
-    }
-}
-
-// ===================================
-// Player search box
-// ===================================
-function searchBox() {
-    document.querySelector("#searchInput")
-        .addEventListener("input", filterPlayers);
-}
-
-// ===================================
-// Position filter
-// ===================================
-function filterPostion() {
-    document.querySelector("#positionFilter")
-        .addEventListener("change", filterPlayers);
-}
-
-// ===================================
-// School filter
-// ===================================
-function filterSchool() {
-    document.querySelector("#schoolFilter")
-        .addEventListener("change", filterPlayers);
-}
-
-// ===================================
-// Reset button
-// ===================================
-function resetButton() {
-    document.querySelector("#resetButton")
-        .addEventListener("click", () => {
-            document.querySelector("#searchInput").value = "";
-            document.querySelector("#positionFilter").selectedIndex = 0;
-            document.querySelector("#schoolFilter").selectedIndex = 0;
-
-            filterPlayers();
-        });
-}
-
 async function tableTooltips(){
     document.addEventListener('DOMContentLoaded', () => {
         const tooltip = document.createElement('div');
@@ -193,12 +120,43 @@ async function tableTooltips(){
     });
 }
 
+async function controlsToggle(){
+    const rankingTabs = document.querySelectorAll(".ranking-tab");
+    const ranksByPosition = document.getElementById("ranksByPosition");
+    const ranksBySchool = document.getElementById("ranksBySchool");
+
+    rankingTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const mode = tab.dataset.mode;
+
+            rankingTabs.forEach(item => {
+                const active = item === tab;
+                item.classList.toggle("active", active);
+                item.setAttribute("aria-pressed", String(active));
+            });
+
+            ranksByPosition.hidden = mode !== "position";
+            ranksBySchool.hidden = mode !== "school";
+        });
+    });
+}
+
+function controlsSchoolSelector() {
+    const selector = document.getElementById("schoolSelector");
+
+    if (!selector) return;
+
+    selector.addEventListener("change", function () {
+        if (this.value) {
+            window.location.href = this.value;
+        }
+    });
+}
+
 // ===================================
 // Initialize
 // ===================================
-//searchBox();
-//filterPostion();
-//filterSchool();
-//resetButton();
+controlsToggle();
+controlsSchoolSelector();
 playerLinks();
 tableTooltips();
