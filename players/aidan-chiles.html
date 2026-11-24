@@ -404,7 +404,7 @@ img {
 
   gap: clamp(22px, 4vw, 46px);
 
-  align-items: center;
+  align-items: start;
 
 }
 
@@ -472,7 +472,11 @@ h1.widget-header {
 
 
 
-
+#ranksByPosition {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
 .hero-copy {
 
@@ -483,10 +487,6 @@ h1.widget-header {
   font-size: clamp(.95rem, 1.4vw, 1.05rem);
 
   line-height: 1.55;
-
-  border-left: SOLID #b8b4ad 2px;
-  padding-left: 10px;
-  border-radius: 10px;
 
 }
 
@@ -880,8 +880,6 @@ h1.widget-header {
 .controls {
 
   display: grid;
-
-  grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr)) max-content;
 
   gap: 10px;
 
@@ -2413,7 +2411,7 @@ tbody tr:hover td:first-child {
 
   .section {
 
-    padding: 20px 0;
+    padding: 8px 0;
 
   }
 
@@ -2469,7 +2467,7 @@ tbody tr:hover td:first-child {
 
   .quick-stats-3 {
 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
 
   }
 
@@ -2954,7 +2952,7 @@ tbody tr:hover td:first-child {
       <text class="bbh-axis" x="38" y="78.25" text-anchor="end">#200</text><line class="bbh-grid" x1="49" x2="638" y1="123.50" y2="123.50" />
       <text class="bbh-axis" x="38" y="127.50" text-anchor="end">#250</text><line class="bbh-grid" x1="49" x2="638" y1="172.75" y2="172.75" />
       <text class="bbh-axis" x="38" y="176.75" text-anchor="end">#300</text><line class="bbh-grid" x1="49" x2="638" y1="222.00" y2="222.00" />
-      <text class="bbh-axis" x="38" y="226.00" text-anchor="end">#350</text><path class="bbh-area" fill="url(#bbh-1xhaaum-gradient)" d="M 49.00 115.62 L 68.63 73.27 L 88.27 71.29 L 107.90 73.27 L 127.53 110.69 L 147.17 123.50 L 166.80 123.50 L 186.43 125.47 L 206.07 127.44 L 225.70 150.09 L 245.33 181.62 L 264.97 181.62 L 284.60 181.62 L 304.23 181.62 L 323.87 184.57 L 323.87 222 L 49.00 222 Z" /><path class="bbh-path" d="M 49.00 115.62 L 68.63 73.27 L 88.27 71.29 L 107.90 73.27 L 127.53 110.69 L 147.17 123.50 L 166.80 123.50 L 186.43 125.47 L 206.07 127.44 L 225.70 150.09 L 245.33 181.62 L 264.97 181.62 L 284.60 181.62 L 304.23 181.62 L 323.87 184.57" /><path class="bbh-area" fill="url(#bbh-1xhaaum-gradient)" d="M 598.73 122.52 L 618.37 121.53 L 638.00 125.47 L 638.00 222 L 598.73 222 Z" /><path class="bbh-path" d="M 598.73 122.52 L 618.37 121.53 L 638.00 125.47" /><text class="bbh-axis" x="49.00" y="250" text-anchor="start">Apr 27</text><text class="bbh-axis" x="245.33" y="250" text-anchor="middle">Jul 6</text><text class="bbh-axis" x="441.67" y="250" text-anchor="middle">Sep 14</text><text class="bbh-axis" x="638.00" y="250" text-anchor="end">Nov 23</text>
+      <text class="bbh-axis" x="38" y="226.00" text-anchor="end">#350</text><path class="bbh-area" fill="url(#bbh-1xhaaum-gradient)" d="M 49.00 115.62 L 68.63 73.27 L 88.27 71.29 L 107.90 73.27 L 127.53 110.69 L 147.17 123.50 L 166.80 123.50 L 186.43 125.47 L 206.07 127.44 L 225.70 150.09 L 245.33 181.62 L 264.97 181.62 L 284.60 181.62 L 304.23 181.62 L 323.87 184.57 L 323.87 222 L 49.00 222 Z" /><path class="bbh-path" d="M 49.00 115.62 L 68.63 73.27 L 88.27 71.29 L 107.90 73.27 L 127.53 110.69 L 147.17 123.50 L 166.80 123.50 L 186.43 125.47 L 206.07 127.44 L 225.70 150.09 L 245.33 181.62 L 264.97 181.62 L 284.60 181.62 L 304.23 181.62 L 323.87 184.57" /><path class="bbh-area" fill="url(#bbh-1xhaaum-gradient)" d="M 598.73 122.52 L 618.37 120.55 L 638.00 125.47 L 638.00 222 L 598.73 222 Z" /><path class="bbh-path" d="M 598.73 122.52 L 618.37 120.55 L 638.00 125.47" /><text class="bbh-axis" x="49.00" y="250" text-anchor="start">Apr 27</text><text class="bbh-axis" x="245.33" y="250" text-anchor="middle">Jul 6</text><text class="bbh-axis" x="441.67" y="250" text-anchor="middle">Sep 14</text><text class="bbh-axis" x="638.00" y="250" text-anchor="end">Nov 23</text>
     <g class="bbh-points"><g class="bbh-point" data-point="0" tabindex="0" role="group"
     aria-label="Week of April 27, 2026; overall #242; position #26; 1 boards">
       <circle class="bbh-hit" cx="49.00" cy="115.62" r="10" />
@@ -3020,9 +3018,9 @@ tbody tr:hover td:first-child {
       <circle class="bbh-hit" cx="598.73" cy="122.52" r="10" />
       <circle class="bbh-dot" cx="598.73" cy="122.52" r="4.3" />
     </g><g class="bbh-point" data-point="16" tabindex="0" role="group"
-    aria-label="Week of November 16, 2026; overall #248; position #22; 4 boards">
-      <circle class="bbh-hit" cx="618.37" cy="121.53" r="10" />
-      <circle class="bbh-dot" cx="618.37" cy="121.53" r="4.3" />
+    aria-label="Week of November 16, 2026; overall #247; position #22; 4 boards">
+      <circle class="bbh-hit" cx="618.37" cy="120.55" r="10" />
+      <circle class="bbh-dot" cx="618.37" cy="120.55" r="4.3" />
     </g><g class="bbh-point" data-point="17" tabindex="0" role="group"
     aria-label="Week of November 23, 2026; overall #252; position #22; 4 boards">
       <circle class="bbh-hit" cx="638.00" cy="125.47" r="10" />
@@ -3156,11 +3154,11 @@ tbody tr:hover td:first-child {
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
     <text class="bbh-tooltip-detail" x="14" y="78">Position #22 · 4 boards</text>
     <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 218.3</text>
-  </g><g class="bbh-tooltip" data-point="16" transform="translate(384.4 135.5)" aria-hidden="true">
+  </g><g class="bbh-tooltip" data-point="16" transform="translate(384.4 134.5)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
     <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
     <text class="bbh-tooltip-date" x="14" y="20">NOV 16, 2026</text>
-    <text class="bbh-tooltip-rank" x="14" y="48">#248 overall</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#247 overall</text>
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
     <text class="bbh-tooltip-detail" x="14" y="78">Position #22 · 4 boards</text>
     <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 208.5</text>
@@ -3267,13 +3265,13 @@ tbody tr:hover td:first-child {
 
         <p>Explore nearby prospects in the overall consensus rankings.</p>
 
-        <nav class="bb-player-links" aria-label="Related prospect profiles"><a href="/players/walker-eget">Walker Eget<small>No. 254 overall</small></a><a href="/players/john-mateer">John Mateer<small>No. 247 overall</small></a><a href="/players/jaden-craig">Jaden Craig<small>No. 261 overall</small></a><a href="/players/dylan-raiola">Dylan Raiola<small>No. 239 overall</small></a></nav>
+        <nav class="bb-player-links" aria-label="Related prospect profiles"><a href="/players/walker-eget">Walker Eget<small>No. 254 overall</small></a><a href="/players/john-mateer">John Mateer<small>No. 246 overall</small></a><a href="/players/jaden-craig">Jaden Craig<small>No. 261 overall</small></a><a href="/players/dylan-raiola">Dylan Raiola<small>No. 238 overall</small></a></nav>
 
     </section>
 <section class="widget-card bb-player-section" aria-labelledby="school-prospects-heading">
         <h2 id="school-prospects-heading">Other 2027 NFL Draft prospects from Northwestern</h2>
         <nav class="bb-player-links" aria-label="Other ranked prospects from Northwestern">
-        <a href="/players/robert-fitzgerald">Robert Fitzgerald<small>S · No. 140 overall</small></a>
+        <a href="/players/robert-fitzgerald">Robert Fitzgerald<small>S · No. 121 overall</small></a>
 <a href="/players/griffin-wilde">Griffin Wilde<small>WR · No. 218 overall</small></a>
         </nav>
     </section>

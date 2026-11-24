@@ -404,7 +404,7 @@ img {
 
   gap: clamp(22px, 4vw, 46px);
 
-  align-items: center;
+  align-items: start;
 
 }
 
@@ -472,7 +472,11 @@ h1.widget-header {
 
 
 
-
+#ranksByPosition {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
 .hero-copy {
 
@@ -483,10 +487,6 @@ h1.widget-header {
   font-size: clamp(.95rem, 1.4vw, 1.05rem);
 
   line-height: 1.55;
-
-  border-left: SOLID #b8b4ad 2px;
-  padding-left: 10px;
-  border-radius: 10px;
 
 }
 
@@ -880,8 +880,6 @@ h1.widget-header {
 .controls {
 
   display: grid;
-
-  grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr)) max-content;
 
   gap: 10px;
 
@@ -2413,7 +2411,7 @@ tbody tr:hover td:first-child {
 
   .section {
 
-    padding: 20px 0;
+    padding: 8px 0;
 
   }
 
@@ -2469,7 +2467,7 @@ tbody tr:hover td:first-child {
 
   .quick-stats-3 {
 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
 
   }
 
@@ -2953,27 +2951,27 @@ tbody tr:hover td:first-child {
       <text class="bbh-axis" x="38" y="29.00" text-anchor="end">#1</text><line class="bbh-grid" x1="49" x2="638" y1="74.37" y2="74.37" />
       <text class="bbh-axis" x="38" y="78.37" text-anchor="end">#101</text><line class="bbh-grid" x1="49" x2="638" y1="123.75" y2="123.75" />
       <text class="bbh-axis" x="38" y="127.75" text-anchor="end">#201</text><line class="bbh-grid" x1="49" x2="638" y1="173.12" y2="173.12" />
-      <text class="bbh-axis" x="38" y="177.12" text-anchor="end">#301</text><path class="bbh-area" fill="url(#bbh-1idkhfm-gradient)" d="M 49.00 83.75 L 68.63 71.90 L 88.27 70.42 L 107.90 72.89 L 127.53 82.27 L 147.17 148.43 L 166.80 148.43 L 186.43 149.91 L 206.07 150.41 L 225.70 161.76 L 245.33 180.53 L 264.97 180.53 L 284.60 180.53 L 304.23 180.53 L 323.87 83.26 L 323.87 222 L 49.00 222 Z" /><path class="bbh-path" d="M 49.00 83.75 L 68.63 71.90 L 88.27 70.42 L 107.90 72.89 L 127.53 82.27 L 147.17 148.43 L 166.80 148.43 L 186.43 149.91 L 206.07 150.41 L 225.70 161.76 L 245.33 180.53 L 264.97 180.53 L 284.60 180.53 L 304.23 180.53 L 323.87 83.26" /><path class="bbh-area" fill="url(#bbh-1idkhfm-gradient)" d="M 363.13 77.83 L 382.77 84.74 L 402.40 86.72 L 422.03 87.70 L 441.67 88.20 L 441.67 222 L 363.13 222 Z" /><path class="bbh-path" d="M 363.13 77.83 L 382.77 84.74 L 402.40 86.72 L 422.03 87.70 L 441.67 88.20" /><path class="bbh-area" fill="url(#bbh-1idkhfm-gradient)" d="M 598.73 147.94 L 618.37 149.91 L 638.00 147.94 L 638.00 222 L 598.73 222 Z" /><path class="bbh-path" d="M 598.73 147.94 L 618.37 149.91 L 638.00 147.94" /><text class="bbh-axis" x="49.00" y="250" text-anchor="start">Apr 27</text><text class="bbh-axis" x="245.33" y="250" text-anchor="middle">Jul 6</text><text class="bbh-axis" x="441.67" y="250" text-anchor="middle">Sep 14</text><text class="bbh-axis" x="638.00" y="250" text-anchor="end">Nov 23</text>
+      <text class="bbh-axis" x="38" y="177.12" text-anchor="end">#301</text><path class="bbh-area" fill="url(#bbh-1idkhfm-gradient)" d="M 49.00 88.20 L 68.63 81.29 L 88.27 77.83 L 107.90 79.31 L 127.53 84.74 L 147.17 148.43 L 166.80 148.43 L 186.43 149.91 L 206.07 150.41 L 225.70 161.76 L 245.33 180.53 L 264.97 180.53 L 284.60 180.53 L 304.23 180.53 L 323.87 82.27 L 323.87 222 L 49.00 222 Z" /><path class="bbh-path" d="M 49.00 88.20 L 68.63 81.29 L 88.27 77.83 L 107.90 79.31 L 127.53 84.74 L 147.17 148.43 L 166.80 148.43 L 186.43 149.91 L 206.07 150.41 L 225.70 161.76 L 245.33 180.53 L 264.97 180.53 L 284.60 180.53 L 304.23 180.53 L 323.87 82.27" /><path class="bbh-area" fill="url(#bbh-1idkhfm-gradient)" d="M 363.13 76.84 L 382.77 89.68 L 402.40 87.70 L 422.03 88.20 L 441.67 89.19 L 441.67 222 L 363.13 222 Z" /><path class="bbh-path" d="M 363.13 76.84 L 382.77 89.68 L 402.40 87.70 L 422.03 88.20 L 441.67 89.19" /><path class="bbh-area" fill="url(#bbh-1idkhfm-gradient)" d="M 598.73 147.94 L 618.37 149.91 L 638.00 147.94 L 638.00 222 L 598.73 222 Z" /><path class="bbh-path" d="M 598.73 147.94 L 618.37 149.91 L 638.00 147.94" /><text class="bbh-axis" x="49.00" y="250" text-anchor="start">Apr 27</text><text class="bbh-axis" x="245.33" y="250" text-anchor="middle">Jul 6</text><text class="bbh-axis" x="441.67" y="250" text-anchor="middle">Sep 14</text><text class="bbh-axis" x="638.00" y="250" text-anchor="end">Nov 23</text>
     <g class="bbh-points"><g class="bbh-point" data-point="0" tabindex="0" role="group"
-    aria-label="Week of April 27, 2026; overall #120; position #16; 1 boards">
-      <circle class="bbh-hit" cx="49.00" cy="83.75" r="10" />
-      <circle class="bbh-dot" cx="49.00" cy="83.75" r="4.3" />
+    aria-label="Week of April 27, 2026; overall #129; position #18; 1 boards">
+      <circle class="bbh-hit" cx="49.00" cy="88.20" r="10" />
+      <circle class="bbh-dot" cx="49.00" cy="88.20" r="4.3" />
     </g><g class="bbh-point" data-point="1" tabindex="0" role="group"
-    aria-label="Week of May 4, 2026; overall #96; position #17; 2 boards">
-      <circle class="bbh-hit" cx="68.63" cy="71.90" r="10" />
-      <circle class="bbh-dot" cx="68.63" cy="71.90" r="4.3" />
+    aria-label="Week of May 4, 2026; overall #115; position #19; 2 boards">
+      <circle class="bbh-hit" cx="68.63" cy="81.29" r="10" />
+      <circle class="bbh-dot" cx="68.63" cy="81.29" r="4.3" />
     </g><g class="bbh-point" data-point="2" tabindex="0" role="group"
-    aria-label="Week of May 11, 2026; overall #93; position #17; 2 boards">
-      <circle class="bbh-hit" cx="88.27" cy="70.42" r="10" />
-      <circle class="bbh-dot" cx="88.27" cy="70.42" r="4.3" />
+    aria-label="Week of May 11, 2026; overall #108; position #16; 2 boards">
+      <circle class="bbh-hit" cx="88.27" cy="77.83" r="10" />
+      <circle class="bbh-dot" cx="88.27" cy="77.83" r="4.3" />
     </g><g class="bbh-point" data-point="3" tabindex="0" role="group"
-    aria-label="Week of May 18, 2026; overall #98; position #16; 2 boards">
-      <circle class="bbh-hit" cx="107.90" cy="72.89" r="10" />
-      <circle class="bbh-dot" cx="107.90" cy="72.89" r="4.3" />
+    aria-label="Week of May 18, 2026; overall #111; position #16; 2 boards">
+      <circle class="bbh-hit" cx="107.90" cy="79.31" r="10" />
+      <circle class="bbh-dot" cx="107.90" cy="79.31" r="4.3" />
     </g><g class="bbh-point" data-point="4" tabindex="0" role="group"
-    aria-label="Week of May 25, 2026; overall #117; position #15; 1 boards">
-      <circle class="bbh-hit" cx="127.53" cy="82.27" r="10" />
-      <circle class="bbh-dot" cx="127.53" cy="82.27" r="4.3" />
+    aria-label="Week of May 25, 2026; overall #122; position #17; 1 boards">
+      <circle class="bbh-hit" cx="127.53" cy="84.74" r="10" />
+      <circle class="bbh-dot" cx="127.53" cy="84.74" r="4.3" />
     </g><g class="bbh-point" data-point="5" tabindex="0" role="group"
     aria-label="Week of June 1, 2026; overall #251; position #33; 1 boards">
       <circle class="bbh-hit" cx="147.17" cy="148.43" r="10" />
@@ -3011,33 +3009,33 @@ tbody tr:hover td:first-child {
       <circle class="bbh-hit" cx="304.23" cy="180.53" r="10" />
       <circle class="bbh-dot" cx="304.23" cy="180.53" r="4.3" />
     </g><g class="bbh-point" data-point="14" tabindex="0" role="group"
-    aria-label="Week of August 3, 2026; overall #119; position #18; 1 boards">
-      <circle class="bbh-hit" cx="323.87" cy="83.26" r="10" />
-      <circle class="bbh-dot" cx="323.87" cy="83.26" r="4.3" />
+    aria-label="Week of August 3, 2026; overall #117; position #17; 1 boards">
+      <circle class="bbh-hit" cx="323.87" cy="82.27" r="10" />
+      <circle class="bbh-dot" cx="323.87" cy="82.27" r="4.3" />
     </g><g class="bbh-point" data-point="15" tabindex="0" role="group"
-    aria-label="Week of August 17, 2026; overall #108; position #16; 2 boards">
-      <circle class="bbh-hit" cx="363.13" cy="77.83" r="10" />
-      <circle class="bbh-dot" cx="363.13" cy="77.83" r="4.3" />
+    aria-label="Week of August 17, 2026; overall #106; position #16; 2 boards">
+      <circle class="bbh-hit" cx="363.13" cy="76.84" r="10" />
+      <circle class="bbh-dot" cx="363.13" cy="76.84" r="4.3" />
     </g><g class="bbh-point" data-point="16" tabindex="0" role="group"
-    aria-label="Week of August 24, 2026; overall #122; position #20; 3 boards">
-      <circle class="bbh-hit" cx="382.77" cy="84.74" r="10" />
-      <circle class="bbh-dot" cx="382.77" cy="84.74" r="4.3" />
+    aria-label="Week of August 24, 2026; overall #132; position #22; 3 boards">
+      <circle class="bbh-hit" cx="382.77" cy="89.68" r="10" />
+      <circle class="bbh-dot" cx="382.77" cy="89.68" r="4.3" />
     </g><g class="bbh-point" data-point="17" tabindex="0" role="group"
-    aria-label="Week of August 31, 2026; overall #126; position #18; 4 boards">
-      <circle class="bbh-hit" cx="402.40" cy="86.72" r="10" />
-      <circle class="bbh-dot" cx="402.40" cy="86.72" r="4.3" />
+    aria-label="Week of August 31, 2026; overall #128; position #19; 4 boards">
+      <circle class="bbh-hit" cx="402.40" cy="87.70" r="10" />
+      <circle class="bbh-dot" cx="402.40" cy="87.70" r="4.3" />
     </g><g class="bbh-point" data-point="18" tabindex="0" role="group"
-    aria-label="Week of September 7, 2026; overall #128; position #18; 4 boards">
-      <circle class="bbh-hit" cx="422.03" cy="87.70" r="10" />
-      <circle class="bbh-dot" cx="422.03" cy="87.70" r="4.3" />
+    aria-label="Week of September 7, 2026; overall #129; position #19; 4 boards">
+      <circle class="bbh-hit" cx="422.03" cy="88.20" r="10" />
+      <circle class="bbh-dot" cx="422.03" cy="88.20" r="4.3" />
     </g><g class="bbh-point" data-point="19" tabindex="0" role="group"
-    aria-label="Week of September 14, 2026; overall #129; position #20; 3 boards">
-      <circle class="bbh-hit" cx="441.67" cy="88.20" r="10" />
-      <circle class="bbh-dot" cx="441.67" cy="88.20" r="4.3" />
+    aria-label="Week of September 14, 2026; overall #131; position #18; 3 boards">
+      <circle class="bbh-hit" cx="441.67" cy="89.19" r="10" />
+      <circle class="bbh-dot" cx="441.67" cy="89.19" r="4.3" />
     </g><g class="bbh-point" data-point="20" tabindex="0" role="group"
-    aria-label="Week of October 5, 2026; overall #170; position #24; 2 boards">
-      <circle class="bbh-hit" cx="500.57" cy="108.44" r="10" />
-      <circle class="bbh-dot" cx="500.57" cy="108.44" r="4.3" />
+    aria-label="Week of October 5, 2026; overall #171; position #24; 2 boards">
+      <circle class="bbh-hit" cx="500.57" cy="108.93" r="10" />
+      <circle class="bbh-dot" cx="500.57" cy="108.93" r="4.3" />
     </g><g class="bbh-point" data-point="21" tabindex="0" role="group"
     aria-label="Week of November 9, 2026; overall #250; position #31; 3 boards">
       <circle class="bbh-hit" cx="598.73" cy="147.94" r="10" />
@@ -3051,45 +3049,45 @@ tbody tr:hover td:first-child {
       <circle class="bbh-hit" cx="638.00" cy="147.94" r="10" />
       <circle class="bbh-dot" cx="638.00" cy="147.94" r="4.3" />
     </g></g>
-    <g class="bbh-tooltips"><g class="bbh-tooltip" data-point="0" transform="translate(63.0 97.8)" aria-hidden="true">
+    <g class="bbh-tooltips"><g class="bbh-tooltip" data-point="0" transform="translate(63.0 102.2)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
     <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
     <text class="bbh-tooltip-date" x="14" y="20">APR 27, 2026</text>
-    <text class="bbh-tooltip-rank" x="14" y="48">#120 overall</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#129 overall</text>
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
-    <text class="bbh-tooltip-detail" x="14" y="78">Position #16 · 1 board</text>
-    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 87.5</text>
-  </g><g class="bbh-tooltip" data-point="1" transform="translate(82.6 85.9)" aria-hidden="true">
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #18 · 1 board</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 87.0</text>
+  </g><g class="bbh-tooltip" data-point="1" transform="translate(82.6 95.3)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
     <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
     <text class="bbh-tooltip-date" x="14" y="20">MAY 4, 2026</text>
-    <text class="bbh-tooltip-rank" x="14" y="48">#96 overall</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#115 overall</text>
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
-    <text class="bbh-tooltip-detail" x="14" y="78">Position #17 · 2 boards</text>
-    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 97.7</text>
-  </g><g class="bbh-tooltip" data-point="2" transform="translate(102.3 84.4)" aria-hidden="true">
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #19 · 2 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 97.6</text>
+  </g><g class="bbh-tooltip" data-point="2" transform="translate(102.3 91.8)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
     <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
     <text class="bbh-tooltip-date" x="14" y="20">MAY 11, 2026</text>
-    <text class="bbh-tooltip-rank" x="14" y="48">#93 overall</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#108 overall</text>
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
-    <text class="bbh-tooltip-detail" x="14" y="78">Position #17 · 2 boards</text>
-    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 97.5</text>
-  </g><g class="bbh-tooltip" data-point="3" transform="translate(121.9 86.9)" aria-hidden="true">
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #16 · 2 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 96.5</text>
+  </g><g class="bbh-tooltip" data-point="3" transform="translate(121.9 93.3)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
     <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
     <text class="bbh-tooltip-date" x="14" y="20">MAY 18, 2026</text>
-    <text class="bbh-tooltip-rank" x="14" y="48">#98 overall</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#111 overall</text>
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
     <text class="bbh-tooltip-detail" x="14" y="78">Position #16 · 2 boards</text>
-    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 97.4</text>
-  </g><g class="bbh-tooltip" data-point="4" transform="translate(141.5 96.3)" aria-hidden="true">
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 97.1</text>
+  </g><g class="bbh-tooltip" data-point="4" transform="translate(141.5 98.7)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
     <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
     <text class="bbh-tooltip-date" x="14" y="20">MAY 25, 2026</text>
-    <text class="bbh-tooltip-rank" x="14" y="48">#117 overall</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#122 overall</text>
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
-    <text class="bbh-tooltip-detail" x="14" y="78">Position #15 · 1 board</text>
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #17 · 1 board</text>
     <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 83.0</text>
   </g><g class="bbh-tooltip" data-point="5" transform="translate(161.2 26.4)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
@@ -3163,62 +3161,62 @@ tbody tr:hover td:first-child {
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
     <text class="bbh-tooltip-detail" x="14" y="78">Position #40 · 1 board</text>
     <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 281.0</text>
-  </g><g class="bbh-tooltip" data-point="14" transform="translate(337.9 97.3)" aria-hidden="true">
+  </g><g class="bbh-tooltip" data-point="14" transform="translate(337.9 96.3)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
     <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
     <text class="bbh-tooltip-date" x="14" y="20">AUG 3, 2026</text>
-    <text class="bbh-tooltip-rank" x="14" y="48">#119 overall</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#117 overall</text>
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
-    <text class="bbh-tooltip-detail" x="14" y="78">Position #18 · 1 board</text>
-    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 96.3</text>
-  </g><g class="bbh-tooltip" data-point="15" transform="translate(377.1 91.8)" aria-hidden="true">
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #17 · 1 board</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 96.1</text>
+  </g><g class="bbh-tooltip" data-point="15" transform="translate(377.1 90.8)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
     <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
     <text class="bbh-tooltip-date" x="14" y="20">AUG 17, 2026</text>
-    <text class="bbh-tooltip-rank" x="14" y="48">#108 overall</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#106 overall</text>
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
     <text class="bbh-tooltip-detail" x="14" y="78">Position #16 · 2 boards</text>
-    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 90.1</text>
-  </g><g class="bbh-tooltip" data-point="16" transform="translate(396.8 98.7)" aria-hidden="true">
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 89.7</text>
+  </g><g class="bbh-tooltip" data-point="16" transform="translate(396.8 103.7)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
     <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
     <text class="bbh-tooltip-date" x="14" y="20">AUG 24, 2026</text>
-    <text class="bbh-tooltip-rank" x="14" y="48">#122 overall</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#132 overall</text>
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
-    <text class="bbh-tooltip-detail" x="14" y="78">Position #20 · 3 boards</text>
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #22 · 3 boards</text>
     <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 93.3</text>
-  </g><g class="bbh-tooltip" data-point="17" transform="translate(416.4 100.7)" aria-hidden="true">
+  </g><g class="bbh-tooltip" data-point="17" transform="translate(416.4 101.7)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
     <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
     <text class="bbh-tooltip-date" x="14" y="20">AUG 31, 2026</text>
-    <text class="bbh-tooltip-rank" x="14" y="48">#126 overall</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#128 overall</text>
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
-    <text class="bbh-tooltip-detail" x="14" y="78">Position #18 · 4 boards</text>
-    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 99.0</text>
-  </g><g class="bbh-tooltip" data-point="18" transform="translate(188.0 101.7)" aria-hidden="true">
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #19 · 4 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 99.2</text>
+  </g><g class="bbh-tooltip" data-point="18" transform="translate(188.0 102.2)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
     <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
     <text class="bbh-tooltip-date" x="14" y="20">SEP 7, 2026</text>
-    <text class="bbh-tooltip-rank" x="14" y="48">#128 overall</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#129 overall</text>
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
-    <text class="bbh-tooltip-detail" x="14" y="78">Position #18 · 4 boards</text>
-    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 101.2</text>
-  </g><g class="bbh-tooltip" data-point="19" transform="translate(207.7 102.2)" aria-hidden="true">
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #19 · 4 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 103.4</text>
+  </g><g class="bbh-tooltip" data-point="19" transform="translate(207.7 103.2)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
     <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
     <text class="bbh-tooltip-date" x="14" y="20">SEP 14, 2026</text>
-    <text class="bbh-tooltip-rank" x="14" y="48">#129 overall</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#131 overall</text>
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
-    <text class="bbh-tooltip-detail" x="14" y="78">Position #20 · 3 boards</text>
-    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 103.1</text>
-  </g><g class="bbh-tooltip" data-point="20" transform="translate(266.6 122.4)" aria-hidden="true">
+    <text class="bbh-tooltip-detail" x="14" y="78">Position #18 · 3 boards</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 104.4</text>
+  </g><g class="bbh-tooltip" data-point="20" transform="translate(266.6 122.9)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
     <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
     <text class="bbh-tooltip-date" x="14" y="20">OCT 5, 2026</text>
-    <text class="bbh-tooltip-rank" x="14" y="48">#170 overall</text>
+    <text class="bbh-tooltip-rank" x="14" y="48">#171 overall</text>
     <line class="bbh-tooltip-divider" x1="14" x2="206" y1="60" y2="60" />
     <text class="bbh-tooltip-detail" x="14" y="78">Position #24 · 2 boards</text>
-    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 124.5</text>
+    <text class="bbh-tooltip-average" x="14" y="96">Average source rank: 128.5</text>
   </g><g class="bbh-tooltip" data-point="21" transform="translate(364.7 25.9)" aria-hidden="true">
     <rect class="bbh-tooltip-bg" width="220" height="108" rx="9" />
     <rect class="bbh-tooltip-accent" x="0" y="0" width="3" height="108" rx="1.5" />
@@ -3344,13 +3342,13 @@ tbody tr:hover td:first-child {
 
         <p>Explore nearby prospects in the overall consensus rankings.</p>
 
-        <nav class="bb-player-links" aria-label="Related prospect profiles"><a href="/players/eric-singleton">Eric Singleton<small>No. 251 overall</small></a><a href="/players/evan-stewart">Evan Stewart<small>No. 274 overall</small></a><a href="/players/griffin-wilde">Griffin Wilde<small>No. 218 overall</small></a><a href="/players/chris-marshall">Chris Marshall<small>No. 217 overall</small></a></nav>
+        <nav class="bb-player-links" aria-label="Related prospect profiles"><a href="/players/eric-singleton">Eric Singleton<small>No. 251 overall</small></a><a href="/players/evan-stewart">Evan Stewart<small>No. 274 overall</small></a><a href="/players/griffin-wilde">Griffin Wilde<small>No. 218 overall</small></a><a href="/players/brandon-inniss">Brandon Inniss<small>No. 288 overall</small></a></nav>
 
     </section>
 <section class="widget-card bb-player-section" aria-labelledby="school-prospects-heading">
         <h2 id="school-prospects-heading">Other 2027 NFL Draft prospects from California</h2>
         <nav class="bb-player-links" aria-label="Other ranked prospects from California">
-        <a href="/players/kingston-lopa">Kingston Lopa<small>S · No. 56 overall</small></a>
+        <a href="/players/kingston-lopa">Kingston Lopa<small>S · No. 58 overall</small></a>
         </nav>
     </section>
 

@@ -404,7 +404,7 @@ img {
 
   gap: clamp(22px, 4vw, 46px);
 
-  align-items: center;
+  align-items: start;
 
 }
 
@@ -472,7 +472,11 @@ h1.widget-header {
 
 
 
-
+#ranksByPosition {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
 .hero-copy {
 
@@ -483,10 +487,6 @@ h1.widget-header {
   font-size: clamp(.95rem, 1.4vw, 1.05rem);
 
   line-height: 1.55;
-
-  border-left: SOLID #b8b4ad 2px;
-  padding-left: 10px;
-  border-radius: 10px;
 
 }
 
@@ -880,8 +880,6 @@ h1.widget-header {
 .controls {
 
   display: grid;
-
-  grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr)) max-content;
 
   gap: 10px;
 
@@ -2413,7 +2411,7 @@ tbody tr:hover td:first-child {
 
   .section {
 
-    padding: 20px 0;
+    padding: 8px 0;
 
   }
 
@@ -2469,7 +2467,7 @@ tbody tr:hover td:first-child {
 
   .quick-stats-3 {
 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
 
   }
 
@@ -3110,13 +3108,13 @@ tbody tr:hover td:first-child {
 
         <p>Explore nearby prospects in the overall consensus rankings.</p>
 
-        <nav class="bb-player-links" aria-label="Related prospect profiles"><a href="/players/aidan-chiles">Aidan Chiles<small>No. 252 overall</small></a><a href="/players/john-mateer">John Mateer<small>No. 247 overall</small></a><a href="/players/jaden-craig">Jaden Craig<small>No. 261 overall</small></a><a href="/players/byrum-brown">Byrum Brown<small>No. 268 overall</small></a></nav>
+        <nav class="bb-player-links" aria-label="Related prospect profiles"><a href="/players/aidan-chiles">Aidan Chiles<small>No. 252 overall</small></a><a href="/players/jaden-craig">Jaden Craig<small>No. 261 overall</small></a><a href="/players/john-mateer">John Mateer<small>No. 246 overall</small></a><a href="/players/byrum-brown">Byrum Brown<small>No. 268 overall</small></a></nav>
 
     </section>
 <section class="widget-card bb-player-section" aria-labelledby="school-prospects-heading">
         <h2 id="school-prospects-heading">Other 2027 NFL Draft prospects from Duke</h2>
         <nav class="bb-player-links" aria-label="Other ranked prospects from Duke">
-        <a href="/players/jeremiah-hasley">Jeremiah Hasley<small>TE · No. 231 overall</small></a>
+        <a href="/players/jeremiah-hasley">Jeremiah Hasley<small>TE · No. 229 overall</small></a>
         </nav>
     </section>
 

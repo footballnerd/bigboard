@@ -404,7 +404,7 @@ img {
 
   gap: clamp(22px, 4vw, 46px);
 
-  align-items: center;
+  align-items: start;
 
 }
 
@@ -472,7 +472,11 @@ h1.widget-header {
 
 
 
-
+#ranksByPosition {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
 .hero-copy {
 
@@ -483,10 +487,6 @@ h1.widget-header {
   font-size: clamp(.95rem, 1.4vw, 1.05rem);
 
   line-height: 1.55;
-
-  border-left: SOLID #b8b4ad 2px;
-  padding-left: 10px;
-  border-radius: 10px;
 
 }
 
@@ -880,8 +880,6 @@ h1.widget-header {
 .controls {
 
   display: grid;
-
-  grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr)) max-content;
 
   gap: 10px;
 
@@ -2413,7 +2411,7 @@ tbody tr:hover td:first-child {
 
   .section {
 
-    padding: 20px 0;
+    padding: 8px 0;
 
   }
 
@@ -2469,7 +2467,7 @@ tbody tr:hover td:first-child {
 
   .quick-stats-3 {
 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
 
   }
 
@@ -3094,11 +3092,11 @@ tbody tr:hover td:first-child {
 <section class="widget-card bb-player-section" aria-labelledby="school-prospects-heading">
         <h2 id="school-prospects-heading">Other 2027 NFL Draft prospects from Michigan</h2>
         <nav class="bb-player-links" aria-label="Other ranked prospects from Michigan">
-        <a href="/players/john-henry-daley">John Henry Daley<small>ED · No. 74 overall</small></a>
-<a href="/players/jyaire-hill">Jyaire Hill<small>CB · No. 86 overall</small></a>
-<a href="/players/blake-frazier">Blake Frazier<small>OL · No. 190 overall</small></a>
-<a href="/players/dom-nichols">Dom Nichols<small>ED · No. 192 overall</small></a>
-<a href="/players/zeke-berry">Zeke Berry<small>CB · No. 219 overall</small></a>
+        <a href="/players/john-henry-daley">John Henry Daley<small>ED · No. 79 overall</small></a>
+<a href="/players/jyaire-hill">Jyaire Hill<small>CB · No. 87 overall</small></a>
+<a href="/players/dom-nichols">Dom Nichols<small>ED · No. 172 overall</small></a>
+<a href="/players/blake-frazier">Blake Frazier<small>OL · No. 185 overall</small></a>
+<a href="/players/zeke-berry">Zeke Berry<small>CB · No. 213 overall</small></a>
         </nav>
     </section>
 

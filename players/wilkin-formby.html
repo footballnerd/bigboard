@@ -404,7 +404,7 @@ img {
 
   gap: clamp(22px, 4vw, 46px);
 
-  align-items: center;
+  align-items: start;
 
 }
 
@@ -472,7 +472,11 @@ h1.widget-header {
 
 
 
-
+#ranksByPosition {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
 .hero-copy {
 
@@ -483,10 +487,6 @@ h1.widget-header {
   font-size: clamp(.95rem, 1.4vw, 1.05rem);
 
   line-height: 1.55;
-
-  border-left: SOLID #b8b4ad 2px;
-  padding-left: 10px;
-  border-radius: 10px;
 
 }
 
@@ -880,8 +880,6 @@ h1.widget-header {
 .controls {
 
   display: grid;
-
-  grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr)) max-content;
 
   gap: 10px;
 
@@ -2413,7 +2411,7 @@ tbody tr:hover td:first-child {
 
   .section {
 
-    padding: 20px 0;
+    padding: 8px 0;
 
   }
 
@@ -2469,7 +2467,7 @@ tbody tr:hover td:first-child {
 
   .quick-stats-3 {
 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
 
   }
 
@@ -3108,8 +3106,8 @@ tbody tr:hover td:first-child {
 <section class="widget-card bb-player-section" aria-labelledby="school-prospects-heading">
         <h2 id="school-prospects-heading">Other 2027 NFL Draft prospects from Texas A&amp;M</h2>
         <nav class="bb-player-links" aria-label="Other ranked prospects from Texas A&amp;M">
-        <a href="/players/mario-craver">Mario Craver<small>WR · No. 80 overall</small></a>
-<a href="/players/anto-saka">Anto Saka<small>ED · No. 129 overall</small></a>
+        <a href="/players/mario-craver">Mario Craver<small>WR · No. 109 overall</small></a>
+<a href="/players/anto-saka">Anto Saka<small>ED · No. 145 overall</small></a>
 <a href="/players/dj-hicks">DJ Hicks<small>DT · No. 267 overall</small></a>
 <a href="/players/dezz-ricks">Dezz Ricks<small>CB · No. 270 overall</small></a>
         </nav>
