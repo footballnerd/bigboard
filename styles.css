@@ -2012,6 +2012,10 @@ tbody tr:hover td:first-child {
 
   }
 
+  .hero-copy {
+    display: none;
+  }
+
   .site-shell {
 
     width: min(100% - 22px, var(--max));
@@ -2034,7 +2038,7 @@ tbody tr:hover td:first-child {
 
     grid-template-columns: 1fr;
 
-    gap: 14px;
+    gap: 0px;
 
   }
 
