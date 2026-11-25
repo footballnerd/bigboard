@@ -13,7 +13,7 @@ async function playerLinks(){
             <div class="player-widget-box">
                 <div class="player-widget-close"></div>
                 <div class="player-widget-content" id="widgetContent">
-                    <div class="loading-small"><img src="img/loading.gif"></div>
+                    <div class="loading-small"><img src="/img/loading.gif"></div>
                 </div>
             </div>
             `;
