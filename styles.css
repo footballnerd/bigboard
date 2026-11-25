@@ -1027,13 +1027,9 @@ tbody tr:hover td:first-child {
 }
 
 .pos-dt {
-
-  color: #c7c7ca;
-
-  background: rgba(142, 142, 147, .07);
-
-  border-color: rgba(142, 142, 147, .30);
-
+  color: #e1d477;
+  background: rgba(210, 190, 55, .07);
+  border-color: rgba(210, 190, 55, .30);
 }
 
 .pos-lb {
