@@ -458,46 +458,36 @@ h1.widget-header {
 
 }
 
-.button:hover {
 
-  background: #1d1d20;
-
-  border-color: #515158;
-
-}
-
-.button-primary {
-
+.button-red {
   border-color: var(--red);
-
   background: var(--red);
-
   color: #fff;
-
-}
-
-.button-primary:hover {
-
-  background: #f7000f;
-
-  border-color: #f02b34;
-
-}
-
-.button-secondary {
-
-  background: transparent;
-
-}
-
-.button-flex {
-
-  flex: 1;
-
-}
-
-.button-square {
   aspect-ratio: 1;
+}
+
+.button-red:hover {
+  background: #f7000f;
+  border-color: #f02b34;
+}
+
+.button-pos {
+  background: transparent;
+  filter: saturate(0.5);
+  aspect-ratio: 1;
+}
+
+.button-pos:hover {
+  filter: saturate(1);
+}
+
+.button-sub{
+  padding: 0 10px;
+}
+
+.button-sub:hover {
+  background: #1d1d20;
+  border-color: #515158;
 }
 
 /* ---------- 6. HERO / WIDGET CARDS ---------- */

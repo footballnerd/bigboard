@@ -35,7 +35,7 @@ async function playerLinks(){
         // Build player links
         const playerPageLinks = ["Overview","Statistics","Advanced","Compare"];
         document.querySelector('.bbh-current').innerHTML = playerPageLinks.map(i => 
-            `<a href="${url}" class="button button-secondary button-flex">${i}</a>`
+            `<a href="${url}" class="button button-sub" style="flex:1;">${i}</a>`
         ).join(' ');
         // Remove the "overall ranking history" text
         document.querySelector('.bbh-heading').remove();
